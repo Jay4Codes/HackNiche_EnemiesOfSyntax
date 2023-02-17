@@ -15,6 +15,10 @@ import os
 from django. shortcuts import render, HttpResponse
 import requests
 import json
+from newsapi.newsapi_client  import NewsApiClient
+newsApi = NewsApiClient(api_key='70aad84b320846ad98c6d2974b4145ee')
+from rest_framework.views import APIView
+
 api_key = '66ebdd8d4d2d41faa00d9e9fbeeb6022'
 
 api_url = 'https://ipgeolocation.abstractapi.com/v1/?api_key=' + api_key
@@ -24,6 +28,8 @@ def get_ip_geolocation_data(ip_address):
    print(ip_address)
    response = requests.get(api_url)
    return response.content
+
+
 
 class RegistrationAPI(generics.GenericAPIView):
     serializer_class = CreateUserSerializer
@@ -96,3 +102,45 @@ class profileDetail(generics.RetrieveUpdateDestroyAPIView):
         return Response(data.data)
     def get_object(self):
         return self.request.user
+
+
+class newsapi(APIView):
+    #permission_classes = [permissions.IsAuthenticated]
+    def get(self, request):
+        category = self.request.GET.get('category')
+        local = self.request.GET.get('local')
+        if local:
+            headLines = newsApi.get_top_headlines(country='in')
+            articles = headLines['articles']
+            return Response(articles)
+        if category and local:
+            headLines = newsApi.get_top_headlines(category=category,country='in')
+            articles = headLines['articles']
+            return Response(articles)
+        source = self.request.GET.get('source')
+        if source:
+            headLines = newsApi.get_top_headlines(source=source,country='in')
+            articles = headLines['articles']
+            return Response(articles)
+        globalloc = self.request.GET.get('global')
+        if globalloc:
+            headLines = newsApi.get_top_headlines(country='us')
+            articles = headLines['articles']
+            return Response(articles)
+        if category and globalloc:
+            headLines = newsApi.get_top_headlines(category=category,country='us')
+            articles = headLines['articles']
+            return Response(articles)
+        query = self.request.GET.get('query')
+        if query:
+            headLines = newsApi.get_top_headlines(q=query)
+            articles = headLines['articles']
+            return Response(articles)
+
+class newsSources(APIView):
+    def get(self,request):
+        newsSources = newsApi.get_sources()
+        articles = newsSources['sources']
+        return Response(articles)
+
+
