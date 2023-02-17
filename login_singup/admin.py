@@ -4,3 +4,4 @@ from .models import *
 
 admin.site.register(Profile)
 admin.site.register(FCM_Token)
+admin.site.register(createnews)

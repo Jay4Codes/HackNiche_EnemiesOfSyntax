@@ -38,3 +38,8 @@ class profileserializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
         fields = '__all__'
+
+class newsserializer(serializers.ModelSerializer):
+    class Meta:
+        model = createnews
+        fields = '__all__'

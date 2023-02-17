@@ -22,3 +22,13 @@ class FCM_Token(models.Model):
     country				= models.TextField(null=True,blank=True)
     region			    = models.TextField(null=True,blank=True)
     create_date         = models.DateTimeField(auto_now_add=True)
+
+class createnews(models.Model):
+	user                = models.ForeignKey(User, on_delete=models.CASCADE, related_name="journalist") 
+	source 				= models.TextField(null=True,blank=True)
+	title               = models.TextField(null=True,blank=True)
+	description 		= models.TextField(null=True,blank=True)
+	url   		   	    = models.TextField(null=True,blank=True)
+	create_date         = models.DateTimeField(auto_now_add=True)
+	content             = models.TextField(null=True,blank=True)
+	Image			= models.ImageField(null=True,blank=True)

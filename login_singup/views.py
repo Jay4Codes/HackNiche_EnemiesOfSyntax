@@ -143,4 +143,60 @@ class newsSources(APIView):
         articles = newsSources['sources']
         return Response(articles)
 
+class createnewsapi(viewsets.ModelViewSet):
+    permission_classes = [permissions.IsAuthenticated, ]
+    serializer_class = newsserializer
+    queryset = createnews.objects.all()
+
+    def create(self, request, *args, **kwargs):
+        source = self.request.data.get('source')
+        post_user = self.request.data.get('post_user')
+        title = self.request.data.get('title')
+        description = self.request.data.get('description')
+        content = self.request.data.get('content')
+        images = self.request.FILES.get('images')
+        url = self.request.data.get('url')
+        new_badwords = list(badwords)
+        x = [x.lower() for x in new_badwords]
+        print(x)
+
+        for i in description.split(' '):
+            print(i)
+
+            if i in x:
+                response_dict = {"Hate Speech Detected": "This text has content with hate "+i}
+                return Response(response_dict)
+        #data = request.data
+        # response = Detoxify('unbiased').predict(description)
+        # ordered_toxicity_scores = sorted(response.items(),key = lambda x: x[1],reverse = True)
+        # response_dict = {}
+        # for i in ordered_toxicity_scores:
+        #     if i[1] > 0.9:
+        #         response_dict = {"Hate Speech Detected": "This text has {hate} content with {value}".format(hate=i[0],value = i[1]), "hate":True}
+        #         return Response(response_dict)
+        # profanity.load_censor_words(badwords)
+        # description1 = profanity.censor(description)
+        # description_new = description1
+
+        # params = {
+        #   'models': 'nudity-2.0',
+        #   'api_user': '377537108',
+        #   'api_secret': 'sxCd4WhwiGeF85jykwU8'
+        # }
+        # print(images)
+        # files = {'media': open(images,'rb')}
+        # r = requests.post('https://api.sightengine.com/1.0/check.json', files=files, data=params)
+        # output = json.loads(r.text)
+        # print(output)
+
+        create = createnews.objects.create(user_id = post_user,title=title,description=description,url=url,Image=images,content=content,source=source)
+
+        create.save()
+        serializer = newsserializer(create,read_only=True,context={'request':request})
+        return Response(serializer.data)
+
+    def retrieve(self,request,pk=None):
+        like = createnews.objects.filter(pk=pk)
+        data = newsserializer(like,many=True)
+        return Response(data.data)
 
