@@ -48,10 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   'Home',
                   style: GoogleFonts.nunito(
                       textStyle: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: 1)),
+                          color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1)),
                 ),
               ],
             ),
