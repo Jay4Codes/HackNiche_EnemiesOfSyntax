@@ -1,34 +1,26 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 
 const ArticlePost = (props) => {
-
-
-
-
   return (
-    <section className="section testimonials overflow-hidden bg-black">
-      <div className="container">
-        <div className="row position-relative">
-          <div className="col-lg-4 col-md-6 pt-1">
-            <div className="shadow rounded bg-white p-4 mt-4">
-              <div className="d-block d-sm-flex align-items-center mb-3">
-                <img
-                  loading="lazy"
-                  decoding="async"
-                  src={props.img}
-                  alt=""
-                  className="img-fluid"
-                  width="65"
-                  height="66"
-                />
-                <div className="mt-3 mt-sm-0 ms-0 ms-sm-3">
-                  <h4 className="h5 mb-1">{props.headline}</h4>
-                  <p className="mb-0">{props.creator}</p>
-                </div>
-              </div>
-              <div className="content">{props.desc}</div>
+    <>
+      <div className="col-lg-4 col-md-6 pt-1">
+        <div className="shadow rounded bg-white p-4 mt-4">
+          <div className="d-block d-sm-flex align-items-center mb-3">
+            <img
+              loading="lazy"
+              decoding="async"
+              src={props.img}
+              alt=""
+              className="img-fluid"
+              width="65"
+              height="66"
+            />
+            <div className="mt-3 mt-sm-0 ms-0 ms-sm-3">
+              <h4 className="h5 mb-1">{props.headline}</h4>
+              <p className="mb-0">{props.creator}</p>
             </div>
           </div>
+          <div className="content">{props.desc}</div>
         </div>
       </div>
       <div className="has-shapes">
@@ -96,7 +88,7 @@ const ArticlePost = (props) => {
           />
         </svg>
       </div>
-    </section>
+    </>
   );
 };
 

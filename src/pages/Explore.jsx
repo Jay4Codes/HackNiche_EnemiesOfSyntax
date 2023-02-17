@@ -4,18 +4,10 @@ import {
   LoadScript,
   InfoWindow,
 } from "@react-google-maps/api";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Explore = () => {
   const [showInfoWindow, setShowInfoWindow] = useState(false);
-
-  const handleMarkerClick = () => {
-    setShowInfoWindow(true);
-  };
-
-  const handleInfoWindowClose = () => {
-    setShowInfoWindow(false);
-  };
 
   const mapStyles = {
     height: "88vh",
@@ -31,6 +23,13 @@ const Explore = () => {
     lat: 37.7749,
     lng: -122.4194,
   };
+  const handleMarkerClick = () => {
+    setShowInfoWindow(true);
+  };
+
+  const handleInfoWindowClose = () => {
+    setShowInfoWindow(false);
+  };
   return (
     <div className="">
       <LoadScript googleMapsApiKey="AIzaSyAVgTxsIyo7r3Xyx4LIqBVrpjJJa0Jnbhs">
@@ -42,7 +41,7 @@ const Explore = () => {
           <Marker position={markerPosition} onClick={handleMarkerClick}>
             {showInfoWindow && (
               <InfoWindow onCloseClick={handleInfoWindowClose}>
-                <div>
+                <div style={{ backgroundColor: "#000" }}>
                   <h3>Marker Info</h3>
                   <p>This is the tooltip content</p>
                 </div>
