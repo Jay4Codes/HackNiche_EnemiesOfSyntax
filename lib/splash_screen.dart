@@ -40,6 +40,6 @@ class _SplashScreenState extends State<SplashScreen> {
                             color: Colors.black, fontSize: 32, fontWeight: FontWeight.w600, letterSpacing: 1)))
               ]),
             )),
-        nextScreen: Videos());
+        nextScreen: getInitialRoute());
   }
 }

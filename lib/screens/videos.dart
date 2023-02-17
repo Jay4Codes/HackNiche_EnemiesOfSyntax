@@ -16,9 +16,9 @@ class _VideosState extends State<Videos> {
   Widget build(BuildContext context) {
     PageController _pageController = PageController(initialPage: 0);
     List<Widget> reel = [
+      VideoScreen(url: "https://storage.googleapis.com/hackniche/news3.mp4"),
       VideoScreen(url: "https://storage.googleapis.com/hackniche/news1.mp4"),
       VideoScreen(url: "https://storage.googleapis.com/hackniche/news2.mp4"),
-      VideoScreen(url: "https://storage.googleapis.com/hackniche/news3.mp4"),
     ];
     return PageView(
       controller: _pageController,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_overlay_loader/flutter_overlay_loader.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hack_niche/auth/auth_controller.dart';
+import 'package:hack_niche/home/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -219,19 +220,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     Loader.hide();
 
-                    if (status ==
-                        "Employer account cannot be logged in through app") {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text(status),
-                        ),
-                      );
-                      return;
-                    }
-
-                    if (status == "success" && storedFcm) {
-                      
-                      return;
+                    if (status == "Success" && storedFcm) {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: ((context) => HomeScreen())));
                     }
 
                     // if (status == "user_disable") {
