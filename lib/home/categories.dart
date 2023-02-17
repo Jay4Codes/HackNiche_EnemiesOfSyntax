@@ -16,6 +16,7 @@ class _CategoriesState extends State<Categories> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0x1A1A1A),
+      floatingActionButton: FloatingActionButton(onPressed: (){},child:Image.asset("assets/illustrations/mic.png"), ),
       body: Container(
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.end,
@@ -266,6 +267,7 @@ class _CategoriesState extends State<Categories> {
                       ],
                     ),
                   ),
+                  
                   // Container(
                   //   padding: const EdgeInsets.all(8),
                   //   color: Color(0xFF565656),
