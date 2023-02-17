@@ -1,7 +1,23 @@
 import "./CreatorStudio.css";
-import React from "react";
+import React, { useState } from "react";
 
 function CreatorStudio() {
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [previewImage, setPreviewImage] = useState(null);
+
+  const handleImageUpload = (event) => {
+    const file = event.target.files[0];
+    setSelectedImage(file);
+
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      setPreviewImage(reader.result);
+    };
+
+    reader.readAsDataURL(file);
+  };
+
   return (
     <section className="creator-studio-section bottom-section">
       <form>
@@ -10,13 +26,21 @@ function CreatorStudio() {
             <div className="row">
               <div className="right col-lg-6">
                 <div className="form-group mb-4 pb-2 avatar">
-                  <label>Upload Image</label>
-                  <input
-                    type="file"
-                    className="form-control shadow-none"
-                    placeholder="Choose your Image"
-                    name="Image"
-                  />
+                  {previewImage ? (
+                    <img src={previewImage} alt="preview" />
+                  ) : (
+                    <>
+                      <label>Upload Image</label>
+                      <input
+                        type="file"
+                        className="form-control shadow-none"
+                        placeholder="Choose your Image"
+                        accept="image/*"
+                        name="Image"
+                        onChange={handleImageUpload}
+                      />
+                    </>
+                  )}
                 </div>
               </div>
               <div className="right col-lg-6">

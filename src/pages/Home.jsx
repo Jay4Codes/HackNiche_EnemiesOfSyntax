@@ -16,13 +16,7 @@ const Home = () => {
                 journalism in India, and provides the user with the latest and
                 important local news updates.
               </p>
-              <Link
-                type="button"
-                className="btn btn-primary"
-                to="/explore"
-                data-bs-toggle="modal"
-                data-bs-target="#applyLoan"
-              >
+              <Link className="btn btn-primary" to="/explore">
                 Explore
                 <span
                   style={{ fontSize: "14px" }}

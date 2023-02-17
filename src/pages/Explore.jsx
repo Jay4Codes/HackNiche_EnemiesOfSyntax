@@ -1,16 +1,24 @@
-import React from "react";
 import {
   GoogleMap,
   Marker,
-  DirectionsRenderer,
-  Circle,
-  MarkerClusterer,
   LoadScript,
+  InfoWindow,
 } from "@react-google-maps/api";
+import React, { useState } from "react";
 
 const Explore = () => {
+  const [showInfoWindow, setShowInfoWindow] = useState(false);
+
+  const handleMarkerClick = () => {
+    setShowInfoWindow(true);
+  };
+
+  const handleInfoWindowClose = () => {
+    setShowInfoWindow(false);
+  };
+
   const mapStyles = {
-    height: "100vh",
+    height: "88vh",
     width: "75%",
   };
 
@@ -31,7 +39,16 @@ const Explore = () => {
           zoom={13}
           center={defaultCenter}
         >
-          <Marker position={markerPosition} />
+          <Marker position={markerPosition} onClick={handleMarkerClick}>
+            {showInfoWindow && (
+              <InfoWindow onCloseClick={handleInfoWindowClose}>
+                <div>
+                  <h3>Marker Info</h3>
+                  <p>This is the tooltip content</p>
+                </div>
+              </InfoWindow>
+            )}
+          </Marker>
         </GoogleMap>
       </LoadScript>
     </div>
