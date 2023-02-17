@@ -36,17 +36,20 @@ export default function Login() {
 
   async function createacc() {
     try {
-      let result = await fetch("", {
-        method: "POST",
-        body: JSON.stringify({
-          password: values.password,
-          username: values.username,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      });
+      let result = await fetch(
+        "http://hacknich.pythonanywhere.com/login/login/",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            password: values.password,
+            username: values.username,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        }
+      );
       result = await result.json();
       console.log(result);
       if (result.token) {
@@ -57,7 +60,7 @@ export default function Login() {
           JSON.parse(JSON.stringify(result.user.id))
         );
         sessionStorage.setItem("token", result.token);
-        history("/profile");
+        history("/");
       } else {
         Swal.fire("Oops!!", "Some error while login", "error");
       }

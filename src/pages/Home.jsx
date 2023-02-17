@@ -8,13 +8,12 @@ const Home = () => {
           <div className="col-lg-6 mb-5 mb-lg-0">
             <div className="block text-center text-lg-start pe-0 pe-xl-5">
               <h1 className="text-capitalize mb-4">
-                get a fastest loan with a smart way by seating at home
+                Keeping you updated with the latest news from your neighborhood
               </h1>
               <p className="mb-4">
-                We have collected the best offers of credit institutions and
-                banks
-                <br />
-                of Colombia. It remains to choose what suits you as fast as you.
+                hyperlocal news video-sharing app, which empowers digital
+                journalism in India, and provides the user with the latest and
+                important local news updates.
               </p>
               <a
                 type="button"
