@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hack_niche/auth/login_screen.dart';
+import 'package:hack_niche/home/categories.dart';
 import 'package:hack_niche/home/home_screen.dart';
 import 'package:hack_niche/screens/videos.dart';
 
@@ -18,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     if (GetStorage().read('token') == null) {
       return LoginScreen();
     }
-    return HomeScreen();
+    return Categories();
   }
 
   @override

@@ -2,6 +2,7 @@ import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.da
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hack_niche/home/categories.dart';
 import 'package:hack_niche/home/home_tabs.dart';
 import 'package:hack_niche/screens/videos.dart';
 
@@ -25,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget getTab() {
-    if (activeIndex == 0) return Home();
+    if (activeIndex == 0) return Categories();
     if (activeIndex == 1) return Videos();
     if (activeIndex == 2) return Container();
     if (activeIndex == 3) return Container();

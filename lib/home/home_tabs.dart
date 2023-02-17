@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:hack_niche/models/get_region_news.dart';
+import 'package:hack_niche/screens/local_news.dart';
 
 class Home extends StatefulWidget {
-  const Home({super.key});
-
+  const Home({super.key, required this.category});
+  final String category;
   @override
   State<Home> createState() => _HomeState();
 }
@@ -72,8 +74,8 @@ class _HomeState extends State<Home> {
             Container(
               color: Color(0xff1a1a1a),
             ),
-            Container(
-              color: Color(0xff1a1a1a),
+            LocalNews(
+              category: widget.category,
             ),
             Container(
               color: Color(0xff1a1a1a),
