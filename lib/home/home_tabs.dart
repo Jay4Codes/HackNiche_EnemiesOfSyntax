@@ -38,6 +38,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             tabs: [
               Tab(
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
                     Padding(
                       padding: EdgeInsets.all(5.0),
@@ -53,6 +54,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               ),
               Tab(
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
                     Padding(
                       padding: EdgeInsets.all(5.0),

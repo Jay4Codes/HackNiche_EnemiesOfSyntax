@@ -56,6 +56,9 @@ dependencies:
   file_picker: ^5.2.5
   flutter_svg: ^1.1.6
   flutter_app_badger: ^1.5.0
+  swipable_stack: ^2.0.0
+  youtube_player_flutter: ^8.1.2
+  url_launcher: ^6.1.9
 
 dev_dependencies:
   flutter_test:
