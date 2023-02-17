@@ -156,16 +156,16 @@ class createnewsapi(viewsets.ModelViewSet):
         content = self.request.data.get('content')
         images = self.request.FILES.get('images')
         url = self.request.data.get('url')
-        new_badwords = list(badwords)
-        x = [x.lower() for x in new_badwords]
-        print(x)
+        # new_badwords = list(badwords)
+        # x = [x.lower() for x in new_badwords]
+        # print(x)
 
-        for i in description.split(' '):
-            print(i)
+        # for i in description.split(' '):
+        #     print(i)
 
-            if i in x:
-                response_dict = {"Hate Speech Detected": "This text has content with hate "+i}
-                return Response(response_dict)
+        #     if i in x:
+        #         response_dict = {"Hate Speech Detected": "This text has content with hate "+i}
+        #         return Response(response_dict)
         #data = request.data
         # response = Detoxify('unbiased').predict(description)
         # ordered_toxicity_scores = sorted(response.items(),key = lambda x: x[1],reverse = True)
@@ -200,3 +200,12 @@ class createnewsapi(viewsets.ModelViewSet):
         data = newsserializer(like,many=True)
         return Response(data.data)
 
+class profileposts(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = [permissions.IsAuthenticated, ]
+    serializer_class = newsserializer
+    queryset = createnews.objects.all()
+
+    def retrieve(self,request,pk=None):
+        like = createnews.objects.filter(user_id=pk)
+        data = newsserializer(like,many=True)
+        return Response(data.data)

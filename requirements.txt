@@ -37,6 +37,7 @@ sniffio==1.2.0
 sortedcontainers==2.4.0
 sqlparse==0.4.2
 typing_extensions==4.4.0
+newsapi-python
 uritemplate==4.1.1
 urllib3==1.26.11
 validators==0.20.0

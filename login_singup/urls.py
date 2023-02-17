@@ -17,6 +17,7 @@ urlpatterns = [
     path('profileDetail/',profileDetail.as_view(),name='profiledetail'),
     path('newsapi/',views.newsapi.as_view(),name='newsapi'),
     path('newssources/',views.newsSources.as_view(),name='newsSources'),
+    path('profileposts/<int:pk>/',views.profileposts.as_view(),name='profileposts'),
 
 
    ]
