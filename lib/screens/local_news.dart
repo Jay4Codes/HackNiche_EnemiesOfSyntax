@@ -14,7 +14,7 @@ class _LocalNewsState extends State<LocalNews> {
   late Future<List<dynamic>?> _getNews;
   void initState() {
     // TODO: implement initState
-    _getNews = GetRegionNews().getLocalNews(widget.category, "local");
+    _getNews = GetRegionNews().getLocalNews(widget.category, "global");
 
     super.initState();
     // print(e);

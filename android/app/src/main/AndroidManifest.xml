@@ -1,5 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hack_niche">
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="hack_niche"
         android:name="${applicationName}"
@@ -46,8 +49,8 @@
      <meta-data
        android:name="com.google.firebase.messaging.default_notification_color"
        android:resource="@color/primary" /> -->
-    <!-- <meta-data android:name="com.google.android.geo.API_KEY"
-               android:value="YOUR KEY HERE"/> -->
+    <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyAVgTxsIyo7r3Xyx4LIqBVrpjJJa0Jnbhs"/>
 
     </application>
 </manifest>

@@ -1,8 +1,10 @@
-import 'package:custom_info_window/custom_info_window.dart';
+import 'dart:async';
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:flutter/foundation.dart';
-import 'dart:async';
+
+import 'package:location/location.dart';
 
 class MapScreen extends StatefulWidget {
   const MapScreen({super.key});
@@ -12,46 +14,65 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
-  static final CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(37.42796133580664, -122.085749655962),
-    zoom: 14.4746,
-  );
-
-  CustomInfoWindowController _customInfoWindowController =
-      CustomInfoWindowController();
-
-  final Completer<GoogleMapController> _controllerGoogleMap = Completer();
+  double? latitude;
+  double? longitude;
+  CameraPosition _initialCameraPosition = CameraPosition(target: LatLng(0, 0));
+  Completer<GoogleMapController> _controllerGoogleMap = Completer();
   GoogleMapController? googleMapController;
 
-  Map<String, Marker> _markers = {};
-  Map<CircleId, Circle> circles = <CircleId, Circle>{};
+  static const CameraPosition _kGooglePlex = CameraPosition(
+      target: LatLng(37.42796133580664, -122.085749655962), zoom: 15);
+  void initializeLocation() async {
+    Location _location = Location();
+    bool? _serviceEnabled;
+    PermissionStatus? _permissionGranted;
+
+    _serviceEnabled = await _location.serviceEnabled();
+    if (!_serviceEnabled) {
+      _serviceEnabled = await _location.requestService();
+    }
+
+    _permissionGranted = await _location.hasPermission();
+    if (_permissionGranted == PermissionStatus.denied) {
+      _permissionGranted = await _location.requestPermission();
+    }
+
+    LocationData _locationData = await _location.getLocation();
+    LatLng currentLatLng =
+        LatLng(_locationData.latitude!, _locationData.latitude!);
+
+    latitude = currentLatLng.latitude;
+    longitude = currentLatLng.longitude;
+    setState(() {
+      _initialCameraPosition = CameraPosition(target: currentLatLng, zoom: 15);
+    });
+  }
+
+  _onStyleLoadedCallback() async {}
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    initializeLocation();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(children: [
-        GoogleMap(
-          myLocationButtonEnabled: true,
-          mapType: MapType.normal,
-          markers: _markers.values.toSet(),
-          circles: circles.values.toSet(),
-          initialCameraPosition: _kGooglePlex,
-          onTap: (LatLng latlng) {
-            _customInfoWindowController.hideInfoWindow!();
-            Marker marker = Marker(
-                draggable: true,
-                markerId: MarkerId(latlng.toString()),
-                position: latlng,
-                onTap: () {
-                  _customInfoWindowController.addInfoWindow!(
-                    Stack(children: [],),latlng
-                  );
-                });
-          },
-          onMapCreated: ((GoogleMapController controller) {
-            _controllerGoogleMap.complete(controller);
-            googleMapController = controller;
-            googleMapController!.setMapStyle('''
+      body: SafeArea(
+          child: Stack(
+        children: [
+          SizedBox(
+            height: MediaQuery.of(context).size.height,
+            child: GoogleMap(
+                initialCameraPosition: _kGooglePlex,
+                mapType: MapType.normal,
+                myLocationEnabled: true,
+                onMapCreated: (GoogleMapController controller) {
+                  _controllerGoogleMap.complete(controller);
+                  googleMapController = controller;
+                  googleMapController!.setMapStyle('''
                     [
                       {
                         "elementType": "geometry",
@@ -214,9 +235,10 @@ class _MapScreenState extends State<MapScreen> {
                       }
                     ]
                 ''');
-          }),
-        )
-      ]),
+                }),
+          ),
+        ],
+      )),
     );
   }
 }
