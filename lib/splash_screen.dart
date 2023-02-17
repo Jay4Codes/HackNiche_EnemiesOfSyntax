@@ -45,6 +45,6 @@ class _SplashScreenState extends State<SplashScreen> {
                             letterSpacing: 1)))
               ]),
             )),
-        nextScreen: HomeScreen());
+        nextScreen: getInitialRoute());
   }
 }
