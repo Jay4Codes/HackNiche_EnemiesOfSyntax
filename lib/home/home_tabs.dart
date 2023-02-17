@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:hack_niche/map_screen.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -8,7 +9,19 @@ class Home extends StatefulWidget {
   State<Home> createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
+  TabController? _tabController;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _tabController = TabController(length: 3, vsync: this);
+    setState(() {
+      _tabController!.index = 1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -69,9 +82,7 @@ class _HomeState extends State<Home> {
             ],
           ),
           body: TabBarView(children: [
-            Container(
-              color: Color(0xff1a1a1a),
-            ),
+            MapScreen(),
             Container(
               color: Color(0xff1a1a1a),
             ),
