@@ -2,9 +2,12 @@ import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.da
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hack_niche/home/categories.dart';
 import 'package:hack_niche/home/home_tabs.dart';
+import 'package:hack_niche/screens/post_screen.dart';
 import 'package:hack_niche/screens/videos.dart';
+import 'package:location/location.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -15,6 +18,30 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int? activeIndex;
+  double? latitude;
+  double? longitude;
+  void initializeLocation() async {
+    Location _location = Location();
+    bool? _serviceEnabled;
+    PermissionStatus? _permissionGranted;
+
+    _serviceEnabled = await _location.serviceEnabled();
+    if (!_serviceEnabled) {
+      _serviceEnabled = await _location.requestService();
+    }
+
+    _permissionGranted = await _location.hasPermission();
+    if (_permissionGranted == PermissionStatus.denied) {
+      _permissionGranted = await _location.requestPermission();
+    }
+
+    LocationData _locationData = await _location.getLocation();
+    LatLng currentLatLng =
+        LatLng(_locationData.latitude!, _locationData.latitude!);
+
+    latitude = currentLatLng.latitude;
+    longitude = currentLatLng.longitude;
+  }
 
   @override
   void initState() {
@@ -28,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget getTab() {
     if (activeIndex == 0) return Categories();
     if (activeIndex == 1) return Videos();
-    if (activeIndex == 2) return Container();
+    if (activeIndex == 2) return PostScreen();
     if (activeIndex == 3) return Container();
 
     return Container();

@@ -54,7 +54,6 @@ class _MapScreenState extends State<MapScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    initializeLocation();
   }
 
   @override
@@ -64,7 +63,7 @@ class _MapScreenState extends State<MapScreen> {
           child: Stack(
         children: [
           SizedBox(
-            height: MediaQuery.of(context).size.height,
+            height: MediaQuery.of(context).size.height * 0.9,
             child: GoogleMap(
                 initialCameraPosition: _kGooglePlex,
                 mapType: MapType.normal,

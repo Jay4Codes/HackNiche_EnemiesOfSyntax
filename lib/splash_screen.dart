@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     if (GetStorage().read('token') == null) {
       return LoginScreen();
     }
-    return Categories();
+    return HomeScreen();
   }
 
   @override
@@ -33,12 +33,18 @@ class _SplashScreenState extends State<SplashScreen> {
                     text: 'Hack',
                     style: GoogleFonts.ptSans(
                         textStyle: const TextStyle(
-                            color: Colors.blue, fontSize: 32, fontWeight: FontWeight.w700, letterSpacing: 1))),
+                            color: Colors.blue,
+                            fontSize: 32,
+                            fontWeight: FontWeight.w700,
+                            letterSpacing: 1))),
                 TextSpan(
                     text: 'niche',
                     style: GoogleFonts.ptSans(
                         textStyle: const TextStyle(
-                            color: Colors.black, fontSize: 32, fontWeight: FontWeight.w600, letterSpacing: 1)))
+                            color: Colors.black,
+                            fontSize: 32,
+                            fontWeight: FontWeight.w600,
+                            letterSpacing: 1)))
               ]),
             )),
         nextScreen: getInitialRoute());
