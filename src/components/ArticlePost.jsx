@@ -1,6 +1,10 @@
-import React from "react";
+import React,{useEffect} from "react";
 
 const ArticlePost = (props) => {
+
+
+
+
   return (
     <section className="section testimonials overflow-hidden bg-black">
       <div className="container">
