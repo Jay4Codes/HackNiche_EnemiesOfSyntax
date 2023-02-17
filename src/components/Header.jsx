@@ -72,11 +72,6 @@ const Header = () => {
                       Global
                     </Link>
                   </li>
-                  <li>
-                    <Link className="dropdown-item " to="/trending">
-                      Trending
-                    </Link>
-                  </li>
                 </ul>
               </li>
             </ul>

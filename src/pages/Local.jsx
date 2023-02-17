@@ -10,7 +10,7 @@ const Local = () => {
     };
 
     fetch(
-      "http://hacknich.pythonanywhere.com/login/newsapi/?category=business&local=1",
+      "https://hacknich.pythonanywhere.com/login/newsapi/?category=business&local=1",
       requestOptions
     )
       .then((response) => response.json())

@@ -19,9 +19,6 @@ const Footer = () => {
                 <li className="mb-2">
                   <Link to="/global">Global</Link>
                 </li>
-                <li className="mb-2">
-                  <Link to="/trending">Trending</Link>
-                </li>
               </ul>
             </div>
           </div>

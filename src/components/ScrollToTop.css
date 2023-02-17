@@ -1,8 +1,8 @@
 .scroll-to-top {
     position: fixed;
     padding: 0.6rem 1rem;
-    bottom: 40px;
-    right: 40px;
+    bottom: 120px;
+    right: 30px;
     background-color: #C00021;
     color: #ffffff;
     z-index: 20;

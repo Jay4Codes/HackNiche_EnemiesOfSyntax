@@ -39,7 +39,7 @@ export default function Signup() {
   async function createacc() {
     try {
       let result = await fetch(
-        "http://hacknich.pythonanywhere.com/login/register/",
+        "https://hacknich.pythonanywhere.com/login/register/",
         {
           method: "POST",
           body: JSON.stringify({

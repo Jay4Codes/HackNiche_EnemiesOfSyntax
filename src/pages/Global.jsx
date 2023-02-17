@@ -10,7 +10,7 @@ const Global = () => {
     };
 
     fetch(
-      "http://hacknich.pythonanywhere.com/login/newsapi/?category=business&global=1",
+      "https://hacknich.pythonanywhere.com/login/newsapi/?category=business&global=1",
       requestOptions
     )
       .then((response) => response.json())
