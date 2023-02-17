@@ -1,17 +1,20 @@
 FROM python:3.9-slim
 
-ENV PYTHONUNBUFFERED=1
-
 WORKDIR /app
 
-RUN apt-get update
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
-COPY requirements.txt /app/
+RUN pip install --upgrade pip 
+COPY . ./
 
+RUN pip install django gunicorn psycopg2-binary dj-database-url
+
+ADD requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
-COPY . /app/
+COPY . /
 
 EXPOSE 8080
 
-CMD [ "python", "manage.py", "runserver", "0.0.0.0:8080" ]
+CMD ["gunicorn", "--bind", ":8080", "--workers", "3", "dashboard.wsgi:application"]
