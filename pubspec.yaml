@@ -52,6 +52,7 @@ dependencies:
   custom_info_window: ^1.0.1
   font_awesome_flutter: ^10.4.0
   location: ^4.4.0
+  carousel_slider: 4.2.1
 
 dev_dependencies:
   flutter_test:

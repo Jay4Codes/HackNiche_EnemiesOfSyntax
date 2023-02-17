@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     if (GetStorage().read('token') == null) {
       return LoginScreen();
     }
-    return Categories();
+    return HomeScreen();
   }
 
   @override

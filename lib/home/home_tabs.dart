@@ -27,7 +27,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 2,
       child: SafeArea(
         child: Scaffold(
           backgroundColor: Color(0xff1a1a1a),
@@ -36,21 +36,6 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                 borderRadius: BorderRadius.circular(50), // Creates border
                 color: Color(0xff565656).withOpacity(0.2)),
             tabs: [
-              Tab(
-                child: Row(
-                  children: const [
-                    Padding(
-                      padding: EdgeInsets.all(5.0),
-                      child: Icon(
-                        Icons.star_outlined,
-                        size: 24,
-                        color: Colors.white,
-                      ),
-                    ),
-                    Text('Explore')
-                  ],
-                ),
-              ),
               Tab(
                 child: Row(
                   children: const [
@@ -84,12 +69,13 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
             ],
           ),
           body: TabBarView(children: [
-            MapScreen(),
             LocalNews(
               category: widget.category,
+              region: "local",
             ),
             LocalNews(
               category: widget.category,
+              region: "global",
             ),
           ]),
         ),
