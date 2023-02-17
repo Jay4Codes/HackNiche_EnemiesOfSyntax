@@ -59,6 +59,7 @@ dependencies:
   swipable_stack: ^2.0.0
   youtube_player_flutter: ^8.1.2
   url_launcher: ^6.1.9
+  dotted_border: ^2.0.0+3
 
 dev_dependencies:
   flutter_test:

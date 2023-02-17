@@ -8,6 +8,7 @@ import 'package:hack_niche/home/categories.dart';
 import 'package:hack_niche/home/home_tabs.dart';
 import 'package:hack_niche/screens/post_screen.dart';
 import 'package:hack_niche/map_screen.dart';
+import 'package:hack_niche/screens/profile_screen.dart';
 import 'package:hack_niche/screens/videos.dart';
 import 'package:location/location.dart';
 
@@ -65,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
       );
     if (activeIndex == 3) return PostScreen();
 
-    return Container();
+    return ProfileScreen();
   }
 
   @override
