@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "286800946416",
+    "project_id": "hackniche-378015",
+    "storage_bucket": "hackniche-378015.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:286800946416:android:bb3ed661e8135eb888ce35",
+        "android_client_info": {
+          "package_name": "com.example.hack_niche"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "286800946416-knpm298tds8foprjbkdeg69a7pt0lqpg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAv-O1wwiAQy7IzoStGcKB8t50MBzrR1Io"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "286800946416-knpm298tds8foprjbkdeg69a7pt0lqpg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
