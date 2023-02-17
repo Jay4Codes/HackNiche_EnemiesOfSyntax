@@ -4,7 +4,7 @@ import ArticlePost from "../components/ArticlePost";
 const Global = () => {
   return (
     <div>
-      <ArticlePost headline="Test" />
+      <ArticlePost headline="Test" creator="Jay" desc="Desc" />
     </div>
   );
 };
