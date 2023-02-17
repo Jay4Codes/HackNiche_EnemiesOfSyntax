@@ -2,7 +2,7 @@ import React from "react";
 
 const ArticlePost = (props) => {
   return (
-    <section className="section testimonials overflow-hidden bg-tertiary">
+    <section className="section testimonials overflow-hidden bg-black">
       <div className="container">
         <div className="row position-relative">
           <div className="col-lg-4 col-md-6 pt-1">
