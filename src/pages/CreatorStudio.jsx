@@ -1,5 +1,6 @@
 import "./CreatorStudio.css";
 import React, { useState, useEffect } from "react";
+import Swal from "sweetalert2";
 
 function CreatorStudio() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -8,9 +9,8 @@ function CreatorStudio() {
   const [description, setDescription] = useState("");
   const [content, setContent] = useState("");
   const [url, setUrl] = useState("");
-  const [location, setLocation]=useState("");
-  const [category, setCategory]=useState("");
-
+  const [location, setLocation] = useState("");
+  const [category, setCategory] = useState("");
 
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
@@ -26,9 +26,11 @@ function CreatorStudio() {
   };
 
   const handleSubmit = (event) => {
-
     var myHeaders = new Headers();
-    myHeaders.append("Authorization", `Token ${sessionStorage.getItem('token')}`);
+    myHeaders.append(
+      "Authorization",
+      `Token ${sessionStorage.getItem("token")}`
+    );
 
     var formdata = new FormData();
     formdata.append("post_user", "1");
@@ -40,16 +42,19 @@ function CreatorStudio() {
     formdata.append("title", title);
 
     var requestOptions = {
-      method: 'POST',
+      method: "POST",
       headers: myHeaders,
       body: formdata,
-      redirect: 'follow'
+      redirect: "follow",
     };
 
-    fetch("https://hacknich.pythonanywhere.com/login/news-create", requestOptions)
-      .then(response => response.json())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
+    fetch(
+      "https://hacknich.pythonanywhere.com/login/news-create",
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
     event.preventDefault();
   };
 
@@ -135,7 +140,11 @@ function CreatorStudio() {
                     onChange={(e) => setUrl(e.target.value)}
                   />
                 </div>
-                <button className="btn btn-primary w-100" type="submit"   onClick={handleSubmit}>
+                <button
+                  className="btn btn-primary w-100"
+                  type="submit"
+                  onClick={handleSubmit}
+                >
                   Post
                 </button>
               </div>
