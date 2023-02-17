@@ -3,57 +3,72 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:hack_niche/screens/news_1.dart';
 
 import 'package:location/location.dart';
 
 class MapScreen extends StatefulWidget {
-  const MapScreen({super.key});
-
+  MapScreen({required this.latitude, required this.longitude});
+  double latitude;
+  double longitude;
   @override
   State<MapScreen> createState() => _MapScreenState();
 }
 
 class _MapScreenState extends State<MapScreen> {
-  double? latitude;
-  double? longitude;
   CameraPosition _initialCameraPosition = CameraPosition(target: LatLng(0, 0));
   Completer<GoogleMapController> _controllerGoogleMap = Completer();
   GoogleMapController? googleMapController;
-
-  static const CameraPosition _kGooglePlex = CameraPosition(
-      target: LatLng(37.42796133580664, -122.085749655962), zoom: 15);
-  void initializeLocation() async {
-    Location _location = Location();
-    bool? _serviceEnabled;
-    PermissionStatus? _permissionGranted;
-
-    _serviceEnabled = await _location.serviceEnabled();
-    if (!_serviceEnabled) {
-      _serviceEnabled = await _location.requestService();
-    }
-
-    _permissionGranted = await _location.hasPermission();
-    if (_permissionGranted == PermissionStatus.denied) {
-      _permissionGranted = await _location.requestPermission();
-    }
-
-    LocationData _locationData = await _location.getLocation();
-    LatLng currentLatLng =
-        LatLng(_locationData.latitude!, _locationData.latitude!);
-
-    latitude = currentLatLng.latitude;
-    longitude = currentLatLng.longitude;
-    setState(() {
-      _initialCameraPosition = CameraPosition(target: currentLatLng, zoom: 15);
-    });
-  }
-
+  final List<Marker> _markers = <Marker>[];
+  final List<LatLng> _latLen = <LatLng>[
+    LatLng(19.107999250880393, 72.83622330178882),
+    LatLng(19.10954017585444, 72.83675974354365),
+  ];
   _onStyleLoadedCallback() async {}
+
+  loadData() async {
+    // makers added according to index
+    _markers.add(
+      Marker(
+        // given marker id
+        markerId: MarkerId("1"),
+        // given marker icon
+        // given position
+        position: _latLen[0],
+      ),
+    );
+    _markers.add(
+      Marker(
+          // given marker id
+          markerId: MarkerId("2"),
+          // given marker icon
+          // given position
+          position: _latLen[1],
+          onTap: () {
+            print('Hello');
+            showModalBottomSheet(
+              isScrollControlled: true,
+              backgroundColor: Color(0xff1a1a1a),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20)),
+              ),
+              context: context,
+              builder: (context) {
+                return News_1();
+              },
+            );
+          }),
+    );
+    setState(() {});
+  }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    loadData();
   }
 
   @override
@@ -65,7 +80,10 @@ class _MapScreenState extends State<MapScreen> {
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.9,
             child: GoogleMap(
-                initialCameraPosition: _kGooglePlex,
+                initialCameraPosition: CameraPosition(
+                    target: LatLng(widget.latitude, widget.longitude),
+                    zoom: 15),
+                markers: Set<Marker>.of(_markers),
                 mapType: MapType.normal,
                 myLocationEnabled: true,
                 onMapCreated: (GoogleMapController controller) {

@@ -14,18 +14,25 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+  flutterLocalNotificationsPlugin.initialize(initializationSettings);
   await flutterLocalNotificationsPlugin
-      .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()
+      .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin>()
       ?.createNotificationChannel(channel);
-  await FirebaseMessaging.instance.setForegroundNotificationPresentationOptions(alert: true, badge: true, sound: true);
+  await FirebaseMessaging.instance.setForegroundNotificationPresentationOptions(
+      alert: true, badge: true, sound: true);
   await GetStorage.init();
   runApp(const MyApp());
 }
 
 const AndroidNotificationChannel channel = AndroidNotificationChannel(
     'high importance channel', 'High Importance Notifications',
-    description: 'This channel is used for important Notifications', importance: Importance.high);
-final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
+    description: 'This channel is used for important Notifications',
+    importance: Importance.high);
+final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+    FlutterLocalNotificationsPlugin();
+InitializationSettings initializationSettings =
+    InitializationSettings(android: AndroidInitializationSettings('logo'));
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
