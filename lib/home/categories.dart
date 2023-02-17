@@ -71,7 +71,7 @@ class _CategoriesState extends State<Categories> {
                     padding: const EdgeInsets.all(8),
                     child: Column(
                       children: [
-                        Image.asset("assets/illustrations/business.png"),
+                        Image.asset("assets/illustrations/entertainment.png"),
                         SizedBox(
                           height: 10,
                         ),
@@ -90,7 +90,7 @@ class _CategoriesState extends State<Categories> {
                     padding: const EdgeInsets.all(8),
                     child: Column(
                       children: [
-                        Image.asset("assets/illustrations/business.png"),
+                        Image.asset("assets/illustrations/environment.png"),
                         SizedBox(
                           height: 10,
                         ),
@@ -109,7 +109,7 @@ class _CategoriesState extends State<Categories> {
                     padding: const EdgeInsets.all(8),
                     child: Column(
                       children: [
-                        Image.asset("assets/illustrations/business.png"),
+                        Image.asset("assets/illustrations/food.png"),
                         SizedBox(
                           height: 10,
                         ),
@@ -128,7 +128,7 @@ class _CategoriesState extends State<Categories> {
                     padding: const EdgeInsets.all(8),
                     child: Column(
                       children: [
-                        Image.asset("assets/illustrations/business.png"),
+                        Image.asset("assets/illustrations/health.png"),
                         SizedBox(
                           height: 10,
                         ),
@@ -147,7 +147,7 @@ class _CategoriesState extends State<Categories> {
                     padding: const EdgeInsets.all(8),
                     child: Column(
                       children: [
-                        Image.asset("assets/illustrations/business.png"),
+                        Image.asset("assets/illustrations/politics.png"),
                         SizedBox(
                           height: 10,
                         ),
@@ -166,7 +166,7 @@ class _CategoriesState extends State<Categories> {
                     padding: const EdgeInsets.all(8),
                     child: Column(
                       children: [
-                        Image.asset("assets/illustrations/business.png"),
+                        Image.asset("assets/illustrations/science.png"),
                         SizedBox(
                           height: 10,
                         ),
@@ -185,7 +185,10 @@ class _CategoriesState extends State<Categories> {
                     padding: const EdgeInsets.all(8),
                     child: Column(
                       children: [
-                        Image.asset("assets/illustrations/business.png"),
+                        Image.asset(
+                          "assets/illustrations/sports.png",
+                          height: 75,
+                        ),
                         SizedBox(
                           height: 10,
                         ),
@@ -204,7 +207,10 @@ class _CategoriesState extends State<Categories> {
                     padding: const EdgeInsets.all(8),
                     child: Column(
                       children: [
-                        Image.asset("assets/illustrations/business.png"),
+                        Image.asset(
+                          "assets/illustrations/technology.png",
+                          height: 75,
+                        ),
                         SizedBox(
                           height: 10,
                         ),
@@ -223,7 +229,10 @@ class _CategoriesState extends State<Categories> {
                     padding: const EdgeInsets.all(8),
                     child: Column(
                       children: [
-                        Image.asset("assets/illustrations/business.png"),
+                        Image.asset(
+                          "assets/illustrations/top.png",
+                          height: 75,
+                        ),
                         SizedBox(
                           height: 10,
                         ),
@@ -242,7 +251,10 @@ class _CategoriesState extends State<Categories> {
                     padding: const EdgeInsets.all(8),
                     child: Column(
                       children: [
-                        Image.asset("assets/illustrations/business.png"),
+                        Image.asset(
+                          "assets/illustrations/world.png",
+                          height: 75,
+                        ),
                         SizedBox(
                           height: 10,
                         ),
