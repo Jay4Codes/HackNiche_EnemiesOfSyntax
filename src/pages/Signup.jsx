@@ -69,54 +69,67 @@ export default function Signup() {
 
   return (
     <>
-      <form className="mt-5 mb-5 login-input" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Username"
-            id="username"
-            label="Username"
-            name="username"
-            value={values.username}
-            onChange={handleChanges}
-            autoComplete="name"
-            autoFocus
-            required
-          />
+      <div className="col-lg-10">
+        <div className="shadow rounded p-5 bg-white">
+          <div className="row">
+            <div className="col-lg-6">
+              <div className="contact-form">
+                <form className="mt-5 mb-5 login-input" onSubmit={handleSubmit}>
+                  <div className="form-group">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Username"
+                      id="username"
+                      label="Username"
+                      name="username"
+                      value={values.username}
+                      onChange={handleChanges}
+                      autoComplete="name"
+                      autoFocus
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <input
+                      type="email"
+                      className="form-control"
+                      placeholder="Email"
+                      id="email"
+                      label="Email Address"
+                      name="email"
+                      value={values.email}
+                      onChange={handleChanges}
+                      autoComplete="email"
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <input
+                      type="password"
+                      className="form-control"
+                      placeholder="Password"
+                      name="password"
+                      label="Password"
+                      id="password"
+                      value={values.password.trim()}
+                      onChange={handleChange("password")}
+                      autoComplete="current-password"
+                      required
+                    />
+                  </div>
+                  <button
+                    className="btn btn-primary text-uppercase"
+                    type="submit"
+                  >
+                    Sign in
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="form-group">
-          <input
-            type="email"
-            className="form-control"
-            placeholder="Email"
-            id="email"
-            label="Email Address"
-            name="email"
-            value={values.email}
-            onChange={handleChanges}
-            autoComplete="email"
-            required
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="password"
-            className="form-control"
-            placeholder="Password"
-            name="password"
-            label="Password"
-            id="password"
-            value={values.password.trim()}
-            onChange={handleChange("password")}
-            autoComplete="current-password"
-            required
-          />
-        </div>
-        <button className="btn login-form__btn submit w-100" type="submit">
-          Sign in
-        </button>
-      </form>
+      </div>
       <p className="mt-5 login-form__footer">
         Already have an account?
         <Link to="/login" className="text-primary">

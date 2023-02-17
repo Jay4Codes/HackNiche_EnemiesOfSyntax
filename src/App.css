@@ -604,7 +604,7 @@ progress {
 }
 
 .img-fluid {
-    max-width: 100%;
+    max-width: 40%;
     height: auto;
 }
 
@@ -10639,8 +10639,7 @@ a:hover {
 }
 
 .section {
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding: 40px 0;
 }
 
 .section-sm {
@@ -11300,7 +11299,7 @@ blockquote::before {
 }
 
 .homepage_tab .payment_info_tab .active {
-    color: #000000 !important;
+    color: #fff !important;
 }
 
 .homepage_tab .content-block,
@@ -11343,7 +11342,7 @@ blockquote::before {
     width: 100%;
     top: 0;
     left: 0;
-    background-color: #FBFBFB;
+    background-color: #121212;
     z-index: -2;
     border-radius: 18px;
 }

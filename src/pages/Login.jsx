@@ -108,7 +108,7 @@ export default function Login() {
                     />
                   </div>
                   <button
-                    className="btn login-form__btn submit w-100"
+                    className="btn btn-primary text-uppercase"
                     type="submit"
                   >
                     Login
