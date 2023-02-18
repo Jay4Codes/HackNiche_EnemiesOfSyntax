@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ArticlePost from "../components/ArticlePost";
+import Fade from "react-reveal/Fade";
 
 const Local = () => {
   const [res, setRes] = useState([]);
@@ -28,18 +29,20 @@ const Local = () => {
   return (
     <div>
       <section className="section testimonials overflow-hidden bg-black">
-        <div className="container">
-          <div className="row position-relative">
-            {res.map((item) => (
-              <ArticlePost
-                headline={item.title}
-                creator={item.author}
-                desc={item.description}
-                img={item.urlToImage}
-              />
-            ))}
+        <Fade bottom cascade>
+          <div className="container">
+            <div className="row position-relative">
+              {res.map((item) => (
+                <ArticlePost
+                  headline={item.title}
+                  creator={item.author}
+                  desc={item.description}
+                  img={item.urlToImage}
+                />
+              ))}
+            </div>
           </div>
-        </div>
+        </Fade>
       </section>
     </div>
   );

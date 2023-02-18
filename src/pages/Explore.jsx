@@ -6,6 +6,8 @@ import {
 } from "@react-google-maps/api";
 import React, { useEffect, useState } from "react";
 import notfound from "../assets/images/404.png";
+import Fade from "react-reveal/Fade";
+import "./Explore.css"
 
 const Explore = () => {
   const [showInfoWindow, setShowInfoWindow] = useState(false);
@@ -55,7 +57,7 @@ const Explore = () => {
 
   return (
     <div style={{ display: "flex" }}>
-      <div className="col-lg-6">
+      <div className="col-lg-8">
         <LoadScript googleMapsApiKey="AIzaSyAVgTxsIyo7r3Xyx4LIqBVrpjJJa0Jnbhs">
           <GoogleMap
             mapContainerStyle={mapStyles}
@@ -66,9 +68,9 @@ const Explore = () => {
             <Marker position={markerPosition} onClick={handleMarkerClick}>
               {showInfoWindow && (
                 <InfoWindow onCloseClick={handleInfoWindowClose}>
-                  <div style={{ backgroundColor: "#000" }}>
-                    <h3>Marker Info</h3>
-                    <p>This is the tooltip content</p>
+                  <div>
+                    <h3 style={{ color: "#000" }}>SSR Case</h3>
+                    <p style={{ color: "#000" }}>View more on the sidebar</p>
                   </div>
                 </InfoWindow>
               )}
@@ -76,27 +78,31 @@ const Explore = () => {
           </GoogleMap>
         </LoadScript>
       </div>
-      <div className="col-lg-4 bg-white">
-        <img src={image} alt="" />
-        <ul>
-          {showInfoWindow ? (
-            <>
-              <li>{news_1}</li>
-              <li>{news_2}</li>
-              <button
-                className="btn btn-primary"
-                onClick={handleSubscribeClick}
-              >
-                Subscribe
-              </button>
-              {setSubscribed ? <li>{news_3}</li> : <></>}
-            </>
-          ) : (
-            <>
-              <img src={notfound} alt="" />
-            </>
-          )}
-        </ul>
+      <div className="col-lg-4 sidebar">
+        {showInfoWindow ? (
+          <>
+            <Fade right>
+              <img src={image} alt="" />
+            </Fade>
+            <ul>
+              <Fade bottom cascade>
+                <li>{news_1}</li>
+                <li>{news_2}</li>
+                <button
+                  className="btn btn-primary"
+                  onClick={handleSubscribeClick}
+                >
+                  Subscribe
+                </button>
+                {setSubscribed ? <li>{news_3}</li> : <></>}
+              </Fade>
+            </ul>
+          </>
+        ) : (
+          <>
+            <img src={notfound} alt="" />
+          </>
+        )}
       </div>
     </div>
   );

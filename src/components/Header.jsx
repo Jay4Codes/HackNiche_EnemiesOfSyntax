@@ -1,6 +1,7 @@
 import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import logo from "../assets/images/logo.png";
 
 const Header = () => {
   return (
@@ -13,7 +14,7 @@ const Header = () => {
               decoding="async"
               className="img-fluid"
               width="160"
-              src="images/logo.png"
+              src={logo}
               alt="Wallet"
             />
           </Link>
@@ -73,6 +74,12 @@ const Header = () => {
                     </Link>
                   </li>
                 </ul>
+              </li>
+              <li>
+                <div
+                  className="dropdown-item"
+                  id="google_translate_element"
+                ></div>
               </li>
             </ul>
             <Link to="login" className="btn btn-outline-primary">
