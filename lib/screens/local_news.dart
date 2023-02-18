@@ -61,7 +61,9 @@ class _LocalNewsState extends State<LocalNews> {
                             // padding: EdgeInsets.all(15.0),
                             alignment: Alignment.bottomLeft,
                             decoration: BoxDecoration(
-                              image: DecorationImage(image: NetworkImage("${i}"), fit: BoxFit.cover),
+                              image: DecorationImage(
+                                  image: NetworkImage("${i}"),
+                                  fit: BoxFit.cover),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Container(
@@ -70,10 +72,12 @@ class _LocalNewsState extends State<LocalNews> {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               width: double.infinity,
-                              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 8, vertical: 5),
                               child: Text(
                                 'Text  test text for abcd efgh ijkl mnop qrst uvwx yz',
-                                style: TextStyle(fontSize: 14.0, color: Colors.white),
+                                style: TextStyle(
+                                    fontSize: 14.0, color: Colors.white),
                               ),
                             )),
                       );
@@ -124,7 +128,8 @@ class _LocalNewsState extends State<LocalNews> {
                                         height: 350,
                                       ),
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 22.0, left: 15),
+                                  padding: const EdgeInsets.only(
+                                      top: 22.0, left: 15),
                                   child: Text(
                                     data[properties.index]['title'],
                                     style: GoogleFonts.ptSans(
@@ -136,7 +141,8 @@ class _LocalNewsState extends State<LocalNews> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.only(top: 22.0, left: 15),
+                                  padding: const EdgeInsets.only(
+                                      top: 22.0, left: 15),
                                   child: Text(
                                     data[properties.index]['description'],
                                     style: GoogleFonts.ptSans(
@@ -148,7 +154,8 @@ class _LocalNewsState extends State<LocalNews> {
                                   ),
                                 ),
                                 Padding(
-                                    padding: const EdgeInsets.only(top: 22.0, left: 15),
+                                    padding: const EdgeInsets.only(
+                                        top: 22.0, left: 15),
                                     child: Row(children: [
                                       Icon(
                                         Icons.access_time,

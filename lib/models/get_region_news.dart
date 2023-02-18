@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
+  import 'package:flutter/material.dart';
+  import 'dart:convert';
+  import 'package:http/http.dart' as http;
 
 class GetRegionNews {
   Future<List<dynamic>?> getLocalNews(String category, String region) async {

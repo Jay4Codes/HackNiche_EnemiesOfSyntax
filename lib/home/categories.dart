@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hack_niche/home/home_screen.dart';
 import 'package:hack_niche/home/home_tabs.dart';
 
@@ -16,7 +17,10 @@ class _CategoriesState extends State<Categories> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0x1A1A1A),
-      floatingActionButton: FloatingActionButton(onPressed: (){},child:Image.asset("assets/illustrations/mic.png"), ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Image.asset("assets/illustrations/mic.png"),
+      ),
       body: Container(
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.end,
@@ -25,6 +29,15 @@ class _CategoriesState extends State<Categories> {
               "assets/illustrations/world.jpg",
               height: 250,
             ),
+            Container(
+                margin: EdgeInsets.only(right: 250, bottom: 20),
+                child: Text('Categories',
+                    style: GoogleFonts.ptSans(
+                        textStyle: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                            letterSpacing: 1)))),
             Container(
               height: 520,
               child: GridView.count(
@@ -267,7 +280,7 @@ class _CategoriesState extends State<Categories> {
                       ],
                     ),
                   ),
-                  
+
                   // Container(
                   //   padding: const EdgeInsets.all(8),
                   //   color: Color(0xFF565656),

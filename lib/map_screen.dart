@@ -81,7 +81,7 @@ class _MapScreenState extends State<MapScreen> {
             height: MediaQuery.of(context).size.height * 0.9,
             child: GoogleMap(
                 initialCameraPosition: CameraPosition(
-                    target: LatLng(widget.latitude, widget.longitude),
+                    target: LatLng(19.10766470606149, 72.8371567106055),
                     zoom: 15),
                 markers: Set<Marker>.of(_markers),
                 mapType: MapType.normal,
