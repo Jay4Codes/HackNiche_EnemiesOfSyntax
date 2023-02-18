@@ -24,49 +24,39 @@ Hola Everyone, This is team The Enemies of Syntax which consists of 4 people of 
 
 # Case Study: Newsify
 
-So about our company Billion Ables, everything mentioned below is all you need to know about this.
+Newsify is a comprehensive news aggregation platform that offers a wide range of news articles, covering local and global events, all in one place. Our platform provides a convenient and efficient way to keep abreast of the latest developments and happenings in your area of interest. By subscribing to news updates through push notifications, you can stay informed and connected to the world around you.
 
-The disable person use more than brain as compare to a Normal person so to help them more to grow as much as they can we have created a software which have various feature in it and each feature is available to every person and with a proper description of how to use it and chatbot is also available to solve the doubts of each and everything one is facing will using any of the feature.   
+Our platform is powered by a sophisticated filtering model that enables personalized news recommendations based on your individual preferences and dislikes. With a diverse range of categories to choose from, we curate news content from multiple fields, ensuring that you have access to the most relevant news that aligns with your interests.
+
+To accommodate different user preferences, we have also incorporated a text-to-speech feature, which allows you to listen to news articles instead of reading them. This feature is easily accessible by simply shaking your device.
+
+Furthermore, our platform encourages user-generated content, enabling users to post news articles they deem to be true. This feature ensures that the platform remains updated with the latest news, providing a platform for open dialogue and sharing of information.
+
+In summary, Newsify is a powerful and sophisticated platform that is designed to deliver the latest news content in a personalized, convenient, and user-friendly manner. With our diverse range of news categories, filtering models, text-to-speech features, and user-generated content, you can be sure that you will never miss a beat on current events. 
 
 # What is so good about us?
 
-Here at Billion Ables , you'll be able to find various feature you are searching for. A designated place for all the software features That are availble on the internet . We provide proper description of along with the chatbot to how to use the feature. 
- 
-The biggest reason of Billion Ables software was to Help Differently Abled person with the basic need of communication problem that they are facings in there day to day life and we are probably able to solve the problems 
+Here at Newsify , you'll be able to find various feature you are searching for. A designated place for all the software features That are availble on the internet .
 
-The feature available in Billion Ables .
-<br /> ->Finger Gesture identifier/ Recognizer.
-<br /> ->Object detector
-<br /> ->Speech to text
-<br /> ->Text to speech
-<br /> ->Font simplify 
-<br /> ->Chat bot
-<br /> ->Mental Health care.
+The feature available in Newsify .
+<br /> ->Local/Global News via location.
+<br /> ->Push Notifications.
+<br /> ->Map based news. 
+<br /> ->News Reels.
+<br /> ->FCM based notifications.
+<br /> ->Create post - studio web.
+<br /> ->Analytics.
+<br /> ->Alan Chatbot.
+<br /> ->Multilingual.
+<br /> ->Text to speech news after shaking the phone.
+<br /> ->Category Filtering.
+
 
 Success usually comes to those who are too busy to be looking for it.” – Henry David Thoreau
 
-Now we are taking this time to introduce you guys with the web thing of our company which is basically a website.
-
-# Description of the Billion Ables
-We have developed a portable cross-platform app for both android and ios and also a website with similar functionalities for specially abled users. Billion Ables has various features like finger gesture detector in that the person who cannot listen and speak will be able to communicate through hand gestures . The object detector helps visually impaired person to detect the object he wants to identify by just facing camera towards it .
-The Feature of text to speech and speech to text will help the people who can’t speak or can’t hear . We have also add a feature of font simplify for people suffering from dyslexia so that they can read the text more easily and simply . 
-The chatbot feature is available on the homepage of software where The user can ask the doubt he is facing from the tools available and the instant solution will be provided for the problem . We have also added a pdf reader feature where the pdf uploaded by user is converted into audio . 
-We are planning to implement a end-to-end platform where in the users can communicate with counselors and doctors in all mediums . 
-
-
 
 # Overcoming The Challenges — Solution Overview
-Web Preview : Site Link - https://pedantic-tereshkova-409fb4.netlify.app/
-
-
-<p float="left">
-<img src = "https://github.com/dishantzaveri/BillionAbles/blob/website/src/assets/1.png" width = "40%" />
-
-
-# App Preview
- https://github.com/dishantzaveri/BillionAbles/blob/main/Better_Quality_App_Video.mp4
- <p float="left">
-<img src = "https://github.com/dishantzaveri/BillionAbles/blob/appdev/assets/1.jpeg" width = "40%" />
+Web Preview : Site Link - https://react-frontend-hackniche-6y55ynronq-uc.a.run.app/
 
 
  
