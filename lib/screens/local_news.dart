@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hack_niche/models/get_region_news.dart';
 import 'package:swipable_stack/swipable_stack.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LocalNews extends StatefulWidget {
   const LocalNews({super.key, required this.category, required this.region});
@@ -32,6 +33,27 @@ class _LocalNewsState extends State<LocalNews> {
     "https://i.ytimg.com/vi/Ra-UDPngU2Q/maxresdefault.jpg"
   ];
 
+  var youtube_urls = [
+    "https://www.youtube.com/watch?v=Xmm3Kr5P1Uw",
+    "https://www.youtube.com/watch?v=nyd-xznCpJc",
+    "https://www.youtube.com/watch?v=Nq2wYlWFucg"
+  ];
+
+  var youtube_titles = [
+    "India TV Live: Aaj Ki Baat | Eknath Shinde | Uddhav Thackeray | Maharashtra | PM Modi | Shivsena",
+    "ABP NEWS LIVE: 24*7 | Turkey Earthquake | Adani Case | IND vs AUS | Uddhav vs Shinde | Pak Crisis",
+    "Aaj Tak LIVE: Uddhav Thackeray | Shiv Sena | Eknath Shinde | Attack in Karachi| LIVE News in Hindi"
+  ];
+
+  // ABP NEWS LIVE: 24*7 | Turkey Earthquake | Adani Case | IND vs AUS | Uddhav vs Shinde | Pak Crisis
+  // Aaj Tak LIVE: Uddhav Thackeray | Shiv Sena | Eknath Shinde | Attack in Karachi| LIVE News in Hindi
+  // India TV Live: Aaj Ki Baat | Eknath Shinde | Uddhav Thackeray | Maharashtra | PM Modi | Shivsena
+  Future<void> _launchUrl(String _url) async {
+    if (!await launchUrl(Uri.parse(_url))) {
+      throw Exception('Could not launch $_url');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,10 +72,13 @@ class _LocalNewsState extends State<LocalNews> {
                   autoPlayInterval: const Duration(seconds: 2),
                 ),
                 items: newsBanner.map((i) {
+                  int idx = newsBanner.indexOf(i);
                   return Builder(
                     builder: (BuildContext context) {
                       return InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          _launchUrl(youtube_urls[idx]);
+                        },
                         child: Container(
                             // height: 100,
                             width: MediaQuery.of(context).size.width,
@@ -72,8 +97,8 @@ class _LocalNewsState extends State<LocalNews> {
                               width: double.infinity,
                               padding: EdgeInsets.symmetric(horizontal: 8, vertical: 5),
                               child: Text(
-                                'Text  test text for abcd efgh ijkl mnop qrst uvwx yz',
-                                style: TextStyle(fontSize: 14.0, color: Colors.white),
+                                youtube_titles[idx],
+                                style: TextStyle(fontSize: 12.0, color: Colors.white, fontWeight: FontWeight.w500),
                               ),
                             )),
                       );
@@ -196,7 +221,13 @@ class _LocalNewsState extends State<LocalNews> {
                         ),
                       );
                     } else {
-                      return CircularProgressIndicator();
+                      return Row(
+                        // crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CircularProgressIndicator(color: Color(0xFFFF3232)),
+                        ],
+                      );
                     }
                   }),
             ),

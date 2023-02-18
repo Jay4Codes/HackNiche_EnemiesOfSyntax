@@ -42,10 +42,7 @@ class ProfileScreen extends StatelessWidget {
                             'Yash Joshi',
                             style: GoogleFonts.ptSans(
                                 textStyle: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.w400,
-                                    letterSpacing: 1)),
+                                    color: Colors.white, fontSize: 24, fontWeight: FontWeight.w400, letterSpacing: 1)),
                           ),
                           SizedBox(
                             height: 10,
@@ -54,10 +51,7 @@ class ProfileScreen extends StatelessWidget {
                             '3 posts',
                             style: GoogleFonts.ptSans(
                                 textStyle: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w400,
-                                    letterSpacing: 1)),
+                                    color: Colors.white, fontSize: 18, fontWeight: FontWeight.w400, letterSpacing: 1)),
                           )
                         ],
                       ),
@@ -77,8 +71,7 @@ class ProfileScreen extends StatelessWidget {
                     Container(
                       decoration: BoxDecoration(
                           color: Color(0xFF565656).withOpacity(0.5),
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(25.0))),
+                          borderRadius: BorderRadius.all(Radius.circular(25.0))),
                       padding: const EdgeInsets.all(8),
                       child: Column(
                         children: [
@@ -93,10 +86,7 @@ class ProfileScreen extends StatelessWidget {
                             'Sushant Singh Rajput didn\'t die by suicide',
                             style: GoogleFonts.ptSans(
                                 textStyle: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.w400,
-                                    letterSpacing: 1)),
+                                    color: Colors.white, fontSize: 24, fontWeight: FontWeight.w400, letterSpacing: 1)),
                           )
                         ],
                       ),
@@ -104,8 +94,7 @@ class ProfileScreen extends StatelessWidget {
                     Container(
                       decoration: BoxDecoration(
                           color: Color(0xFF565656).withOpacity(0.5),
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(25.0))),
+                          borderRadius: BorderRadius.all(Radius.circular(25.0))),
                       padding: const EdgeInsets.all(8),
                       child: Column(
                         children: [
@@ -135,8 +124,7 @@ class ProfileScreen extends StatelessWidget {
                     Container(
                       decoration: BoxDecoration(
                           color: Color(0xFF565656).withOpacity(0.5),
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(25.0))),
+                          borderRadius: BorderRadius.all(Radius.circular(25.0))),
                       padding: const EdgeInsets.all(8),
                       child: Column(
                         children: [

@@ -12,6 +12,7 @@ class Videos extends StatefulWidget {
 }
 
 class _VideosState extends State<Videos> {
+  // var _razorpay = Razorpay();
   @override
   Widget build(BuildContext context) {
     PageController _pageController = PageController(initialPage: 0);
