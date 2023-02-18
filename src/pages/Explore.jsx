@@ -7,7 +7,7 @@ import {
 import React, { useEffect, useState } from "react";
 import notfound from "../assets/images/404.png";
 import Fade from "react-reveal/Fade";
-import "./Explore.css"
+import "./Explore.css";
 
 const Explore = () => {
   const [showInfoWindow, setShowInfoWindow] = useState(false);
@@ -86,15 +86,21 @@ const Explore = () => {
             </Fade>
             <ul>
               <Fade bottom cascade>
-                <li>{news_1}</li>
-                <li>{news_2}</li>
-                <button
-                  className="btn btn-primary"
-                  onClick={handleSubscribeClick}
-                >
-                  Subscribe
-                </button>
-                {setSubscribed ? <li>{news_3}</li> : <></>}
+                <li style={{ margin: "10px" }}>{news_1}</li>
+                <li style={{ margin: "10px" }}>{news_2}</li>
+                <li style={{ margin: "10px" }}>
+                  <button
+                    className="btn btn-primary"
+                    onClick={handleSubscribeClick}
+                  >
+                    Subscribed
+                  </button>
+                </li>
+                {setSubscribed ? (
+                  <li style={{ margin: "10px" }}>{news_3}</li>
+                ) : (
+                  <></>
+                )}
               </Fade>
             </ul>
           </>

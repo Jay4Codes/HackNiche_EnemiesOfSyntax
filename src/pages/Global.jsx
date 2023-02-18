@@ -28,6 +28,10 @@ const Global = () => {
 
   return (
     <div>
+      <center>
+        <h1>Global</h1>
+        <p>Keep yourself updated with international news feed</p>
+      </center>
       <section className="section testimonials overflow-hidden bg-black">
         <Fade bottom cascade>
           <div className="container">

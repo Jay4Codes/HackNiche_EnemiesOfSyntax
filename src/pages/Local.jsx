@@ -28,6 +28,10 @@ const Local = () => {
 
   return (
     <div>
+      <center>
+        <h1>Local</h1>
+        <p>Your personalized local feed</p>
+      </center>
       <section className="section testimonials overflow-hidden bg-black">
         <Fade bottom cascade>
           <div className="container">
