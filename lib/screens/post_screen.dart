@@ -50,16 +50,14 @@ class _PostScreenState extends State<PostScreen> {
 
     File selectedFile = File(result.files.single.path!);
     setState(() {
-      var lastSeperator =
-          selectedFile!.path.lastIndexOf(Platform.pathSeparator);
+      var lastSeperator = selectedFile!.path.lastIndexOf(Platform.pathSeparator);
       filename = selectedFile.path.substring(lastSeperator + 1);
     });
 
     return selectedFile;
   }
 
-  Future<StreamedResponse> submitSubscription(
-      {File? file, String? filename, String? token}) async {
+  Future<StreamedResponse> submitSubscription({File? file, String? filename, String? token}) async {
     ///MultiPart request
     var request = http.MultipartRequest(
       'POST',
@@ -92,8 +90,7 @@ class _PostScreenState extends State<PostScreen> {
     var response = jsonDecode(await res.stream.bytesToString());
     Dialog successDialog = Dialog(
       backgroundColor: Color(0xff1a1a1a),
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(7.46365)), //this right here
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(7.46365)), //this right here
       child: Container(
         height: 257.0,
         width: 351.0,
@@ -131,10 +128,7 @@ class _PostScreenState extends State<PostScreen> {
                 'News submitted successfully!!',
                 style: GoogleFonts.ptSans(
                     textStyle: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                        letterSpacing: 1)),
+                        color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1)),
               ),
             ),
             InkWell(
@@ -146,18 +140,13 @@ class _PostScreenState extends State<PostScreen> {
                 child: Container(
                   height: 35,
                   width: 154,
-                  decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.all(Radius.circular(20.0))),
+                  decoration: BoxDecoration(color: Colors.blue, borderRadius: BorderRadius.all(Radius.circular(20.0))),
                   child: Center(
                       child: Text(
                     "Back To Home",
                     style: GoogleFonts.ptSans(
                         textStyle: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w700,
-                            letterSpacing: 1)),
+                            color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1)),
                   )),
                 ),
               ),
@@ -169,8 +158,7 @@ class _PostScreenState extends State<PostScreen> {
 
     Dialog errorDialog = Dialog(
       backgroundColor: Color(0xff1a1a1a),
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(7.46365)), //this right here
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(7.46365)), //this right here
       child: Container(
         height: 257.0,
         width: 351.0,
@@ -205,27 +193,22 @@ class _PostScreenState extends State<PostScreen> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 22.0),
+              padding: EdgeInsets.only(top: 22.0, left: 5),
               child: Text(
                 'News not submitted successfully!!',
                 style: GoogleFonts.ptSans(
                     textStyle: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                        letterSpacing: 1)),
+                        color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1)),
               ),
             ),
             Container(
-              padding: EdgeInsets.only(top: 12.0),
+              padding: EdgeInsets.only(top: 12.0, left: 18),
               child: Text(
                 'Hate Speech Detected: ${response["Hate Speech Detected"]}',
+                textAlign: TextAlign.center,
                 style: GoogleFonts.ptSans(
                     textStyle: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                        letterSpacing: 1)),
+                        color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1)),
               ),
             ),
             InkWell(
@@ -237,18 +220,13 @@ class _PostScreenState extends State<PostScreen> {
                 child: Container(
                   height: 35,
                   width: 154,
-                  decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.all(Radius.circular(20.0))),
+                  decoration: BoxDecoration(color: Colors.blue, borderRadius: BorderRadius.all(Radius.circular(20.0))),
                   child: Center(
                       child: Text(
                     "Back To Home",
                     style: GoogleFonts.ptSans(
                         textStyle: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w700,
-                            letterSpacing: 1)),
+                            color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1)),
                   )),
                 ),
               ),
@@ -283,11 +261,8 @@ class _PostScreenState extends State<PostScreen> {
         title: Text(
           'Add a News Post',
           style: GoogleFonts.ptSans(
-              textStyle: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w700,
-                  letterSpacing: 1)),
+              textStyle:
+                  const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1)),
         ),
       ),
       body: Padding(
@@ -301,19 +276,13 @@ class _PostScreenState extends State<PostScreen> {
                 TextFormField(
                   style: GoogleFonts.ptSans(
                       textStyle: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: 1)),
+                          color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1)),
                   controller: titleController,
                   decoration: InputDecoration(
                     hintText: 'Title',
                     hintStyle: GoogleFonts.ptSans(
                         textStyle: const TextStyle(
-                            color: Color(0xffbebebe),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w700,
-                            letterSpacing: 1)),
+                            color: Color(0xffbebebe), fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1)),
                     errorBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0),
                       borderSide: const BorderSide(color: Colors.red),
@@ -355,19 +324,13 @@ class _PostScreenState extends State<PostScreen> {
                   maxLines: 5,
                   style: GoogleFonts.ptSans(
                       textStyle: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: 1)),
+                          color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1)),
                   controller: descriptionController,
                   decoration: InputDecoration(
                     hintText: 'Description',
                     hintStyle: GoogleFonts.ptSans(
                         textStyle: const TextStyle(
-                            color: Color(0xffbebebe),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w700,
-                            letterSpacing: 1)),
+                            color: Color(0xffbebebe), fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1)),
                     errorBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0),
                       borderSide: const BorderSide(color: Colors.red),
@@ -409,18 +372,12 @@ class _PostScreenState extends State<PostScreen> {
                   controller: locationController,
                   style: GoogleFonts.ptSans(
                       textStyle: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: 1)),
+                          color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1)),
                   decoration: InputDecoration(
                     hintText: 'Location',
                     hintStyle: GoogleFonts.ptSans(
                         textStyle: const TextStyle(
-                            color: Color(0xffbebebe),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w700,
-                            letterSpacing: 1)),
+                            color: Color(0xffbebebe), fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1)),
                     errorBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0),
                       borderSide: const BorderSide(color: Colors.red),
@@ -463,10 +420,7 @@ class _PostScreenState extends State<PostScreen> {
                     Text('Select Category: ',
                         style: GoogleFonts.ptSans(
                           textStyle: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700,
-                              letterSpacing: 1),
+                              color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1),
                         )),
                     SizedBox(
                       width: 10,
@@ -482,10 +436,7 @@ class _PostScreenState extends State<PostScreen> {
                               'Buisness',
                               style: GoogleFonts.ptSans(
                                 textStyle: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w700,
-                                    letterSpacing: 1),
+                                    color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1),
                               ),
                             ),
                           ),
@@ -495,10 +446,7 @@ class _PostScreenState extends State<PostScreen> {
                               'Entertainment',
                               style: GoogleFonts.ptSans(
                                 textStyle: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w700,
-                                    letterSpacing: 1),
+                                    color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1),
                               ),
                             ),
                           ),
@@ -508,10 +456,7 @@ class _PostScreenState extends State<PostScreen> {
                               'Environment',
                               style: GoogleFonts.ptSans(
                                 textStyle: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w700,
-                                    letterSpacing: 1),
+                                    color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1),
                               ),
                             ),
                           ),
@@ -521,10 +466,7 @@ class _PostScreenState extends State<PostScreen> {
                               'Food',
                               style: GoogleFonts.ptSans(
                                 textStyle: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w700,
-                                    letterSpacing: 1),
+                                    color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1),
                               ),
                             ),
                           ),
@@ -534,10 +476,7 @@ class _PostScreenState extends State<PostScreen> {
                               'Health',
                               style: GoogleFonts.ptSans(
                                 textStyle: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w700,
-                                    letterSpacing: 1),
+                                    color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1),
                               ),
                             ),
                           ),
@@ -547,10 +486,7 @@ class _PostScreenState extends State<PostScreen> {
                               'Politics',
                               style: GoogleFonts.ptSans(
                                 textStyle: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w700,
-                                    letterSpacing: 1),
+                                    color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1),
                               ),
                             ),
                           ),
@@ -560,10 +496,7 @@ class _PostScreenState extends State<PostScreen> {
                               'Science',
                               style: GoogleFonts.ptSans(
                                 textStyle: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w700,
-                                    letterSpacing: 1),
+                                    color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1),
                               ),
                             ),
                           ),
@@ -573,10 +506,7 @@ class _PostScreenState extends State<PostScreen> {
                               'Sports',
                               style: GoogleFonts.ptSans(
                                 textStyle: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w700,
-                                    letterSpacing: 1),
+                                    color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1),
                               ),
                             ),
                           ),
@@ -586,10 +516,7 @@ class _PostScreenState extends State<PostScreen> {
                               'Technology',
                               style: GoogleFonts.ptSans(
                                 textStyle: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w700,
-                                    letterSpacing: 1),
+                                    color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1),
                               ),
                             ),
                           ),
@@ -599,10 +526,7 @@ class _PostScreenState extends State<PostScreen> {
                               'Top',
                               style: GoogleFonts.ptSans(
                                 textStyle: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w700,
-                                    letterSpacing: 1),
+                                    color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1),
                               ),
                             ),
                           ),
@@ -612,10 +536,7 @@ class _PostScreenState extends State<PostScreen> {
                               'World',
                               style: GoogleFonts.ptSans(
                                 textStyle: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w700,
-                                    letterSpacing: 1),
+                                    color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1),
                               ),
                             ),
                           ),
@@ -634,18 +555,12 @@ class _PostScreenState extends State<PostScreen> {
                   controller: urlController,
                   style: GoogleFonts.ptSans(
                       textStyle: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: 1)),
+                          color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1)),
                   decoration: InputDecoration(
                     hintText: 'Url',
                     hintStyle: GoogleFonts.ptSans(
                         textStyle: const TextStyle(
-                            color: Color(0xffbebebe),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w700,
-                            letterSpacing: 1)),
+                            color: Color(0xffbebebe), fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1)),
                     errorBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0),
                       borderSide: const BorderSide(color: Colors.red),
@@ -698,10 +613,7 @@ class _PostScreenState extends State<PostScreen> {
                             text: 'Add Attachment ',
                             style: GoogleFonts.ptSans(
                                 textStyle: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w400,
-                                    letterSpacing: 1)),
+                                    color: Colors.white, fontSize: 18, fontWeight: FontWeight.w400, letterSpacing: 1)),
                           ),
                           TextSpan(
                             text: '*',
@@ -726,8 +638,7 @@ class _PostScreenState extends State<PostScreen> {
                                   width: MediaQuery.of(context).size.width - 60,
                                   child: SingleChildScrollView(
                                     child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                      mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
                                         if (image != null)
                                           Image.file(
@@ -750,15 +661,12 @@ class _PostScreenState extends State<PostScreen> {
                       padding: const EdgeInsets.all(8.0),
                       child: InkWell(
                         onTap: () async {
-                          await submitSubscription(
-                              file: image, filename: filename);
+                          await submitSubscription(file: image, filename: filename);
                         },
                         child: Container(
                           height: 50,
                           width: 100,
-                          decoration: BoxDecoration(
-                              color: Color(0xffff3232),
-                              borderRadius: BorderRadius.circular(20)),
+                          decoration: BoxDecoration(color: Color(0xffff3232), borderRadius: BorderRadius.circular(20)),
                           child: Center(
                             child: Text(
                               'Submit',

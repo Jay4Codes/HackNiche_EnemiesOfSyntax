@@ -70,7 +70,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               )
             ],
           ),
-          body: TabBarView(children: [
+          body: TabBarView(physics: NeverScrollableScrollPhysics(), children: [
             LocalNews(
               category: widget.category,
               region: "local",
