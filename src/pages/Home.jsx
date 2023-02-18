@@ -40,7 +40,7 @@ const Home = () => {
                 <div className="ps-lg-5 text-center">
                   <img
                     decoding="async"
-                    src="images/banner/banner.png"
+                    src={bannermock}
                     alt="banner image"
                     className="w-100"
                   />
