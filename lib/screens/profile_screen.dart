@@ -57,10 +57,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             'Yash Joshi',
                             style: GoogleFonts.ptSans(
                                 textStyle: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.w400,
-                                    letterSpacing: 1)),
+                                    color: Colors.white, fontSize: 24, fontWeight: FontWeight.w400, letterSpacing: 1)),
                           ),
                           SizedBox(
                             height: 10,
@@ -69,10 +66,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             '6 posts',
                             style: GoogleFonts.ptSans(
                                 textStyle: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w400,
-                                    letterSpacing: 1)),
+                                    color: Colors.white, fontSize: 18, fontWeight: FontWeight.w400, letterSpacing: 1)),
                           )
                         ],
                       ),

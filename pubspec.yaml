@@ -60,6 +60,8 @@ dependencies:
   youtube_player_flutter: ^8.1.2
   url_launcher: ^6.1.9
   dotted_border: ^2.0.0+3
+  shake: ^2.2.0
+  text_to_speech: ^0.2.3
 
 dev_dependencies:
   flutter_test:

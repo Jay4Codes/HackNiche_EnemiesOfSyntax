@@ -2,7 +2,6 @@
     package="com.example.hack_niche">
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="hack_niche"
         android:name="${applicationName}"
@@ -53,4 +52,9 @@
                android:value="AIzaSyAVgTxsIyo7r3Xyx4LIqBVrpjJJa0Jnbhs"/>
 
     </application>
+    <queries>  
+      <intent>  
+        <action android:name="android.intent.action.TTS_SERVICE" />  
+       </intent>  
+    </queries>  
 </manifest>
