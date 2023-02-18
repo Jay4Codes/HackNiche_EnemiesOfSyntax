@@ -43,7 +43,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                     Padding(
                       padding: EdgeInsets.all(5.0),
                       child: Icon(
-                        FontAwesomeIcons.indianRupeeSign,
+                        FontAwesomeIcons.locationPin,
                         size: 24,
                         color: Colors.white,
                       ),
