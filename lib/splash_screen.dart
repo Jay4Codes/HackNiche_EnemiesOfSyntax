@@ -23,30 +23,31 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Future.delayed(
+        Duration(seconds: 3),
+        (() => Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: ((context) => getInitialRoute())))));
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return AnimatedSplashScreen(
-        splash: Container(
-            margin: EdgeInsets.only(left: 25, top: 25),
-            child: RichText(
-              text: TextSpan(children: [
-                TextSpan(
-                    text: 'Hack',
-                    style: GoogleFonts.ptSans(
-                        textStyle: const TextStyle(
-                            color: Colors.blue,
-                            fontSize: 32,
-                            fontWeight: FontWeight.w700,
-                            letterSpacing: 1))),
-                TextSpan(
-                    text: 'niche',
-                    style: GoogleFonts.ptSans(
-                        textStyle: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 32,
-                            fontWeight: FontWeight.w600,
-                            letterSpacing: 1)))
-              ]),
-            )),
-        nextScreen: getInitialRoute());
+    return Scaffold(
+        backgroundColor: Color(0xff1a1a1a),
+        body: Center(
+            child:
+                Container(child: Image.asset("assets/illustrations/logo.png")))
+
+        // body: Container(
+        //   color: Color(0xff1a1a1a),
+        //   child: SizedBox(
+        //     child: Image.asset(
+        //       'assets/illustrations/logo.png',
+        //     ),
+        //   ),
+        // ),
+        );
   }
 }

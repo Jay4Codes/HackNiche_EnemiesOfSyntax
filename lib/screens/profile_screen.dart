@@ -57,7 +57,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             'Yash Joshi',
                             style: GoogleFonts.ptSans(
                                 textStyle: const TextStyle(
-                                    color: Colors.white, fontSize: 24, fontWeight: FontWeight.w400, letterSpacing: 1)),
+                                    color: Colors.white,
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.w400,
+                                    letterSpacing: 1)),
                           ),
                           SizedBox(
                             height: 10,
@@ -66,7 +69,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             '6 posts',
                             style: GoogleFonts.ptSans(
                                 textStyle: const TextStyle(
-                                    color: Colors.white, fontSize: 18, fontWeight: FontWeight.w400, letterSpacing: 1)),
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w400,
+                                    letterSpacing: 1)),
                           )
                         ],
                       ),
@@ -98,21 +104,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   color: Colors.black,
                                   borderRadius: BorderRadius.circular(10)),
                               child: Column(children: [
-                                // data[index]["Image"] != null
-                                //     ? ClipRRect(
-                                //         borderRadius: BorderRadius.circular(10),
-                                //         child: Image.network(
-                                //           '${data[index]["Image"]}',
-                                //           height: 250,
-                                //           fit: BoxFit.cover,
-                                //         ),
-                                //       )
-                                //     :
-                                Image.network(
-                                  'https://resize.indiatvnews.com/en/resize/newbucket/730_-/2023/02/breaking-news-template-5-1676596130.jpg',
-                                  fit: BoxFit.cover,
-                                  height: 350,
-                                ),
+                                data[index]["Image"] != null
+                                    ? ClipRRect(
+                                        borderRadius: BorderRadius.circular(10),
+                                        child: Image.network(
+                                          'https://hacknich.pythonanywhere.com${data[index]["Image"]}',
+                                          height: 250,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      )
+                                    : Image.network(
+                                        'https://resize.indiatvnews.com/en/resize/newbucket/730_-/2023/02/breaking-news-template-5-1676596130.jpg',
+                                        fit: BoxFit.cover,
+                                        height: 350,
+                                      ),
                                 Padding(
                                   padding: const EdgeInsets.only(
                                       top: 22.0, left: 15),

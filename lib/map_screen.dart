@@ -23,6 +23,8 @@ class _MapScreenState extends State<MapScreen> {
   final List<LatLng> _latLen = <LatLng>[
     LatLng(19.107999250880393, 72.83622330178882),
     LatLng(19.10954017585444, 72.83675974354365),
+    LatLng(19.115939262800357, 72.83452542996636),
+    LatLng(19.106279435029784, 72.83242384491788),
   ];
   _onStyleLoadedCallback() async {}
 
@@ -60,6 +62,24 @@ class _MapScreenState extends State<MapScreen> {
               },
             );
           }),
+    );
+    _markers.add(
+      Marker(
+        // given marker id
+        markerId: MarkerId("3"),
+        // given marker icon
+        // given position
+        position: _latLen[2],
+      ),
+    );
+    _markers.add(
+      Marker(
+        // given marker id
+        markerId: MarkerId("4"),
+        // given marker icon
+        // given position
+        position: _latLen[3],
+      ),
     );
     setState(() {});
   }
