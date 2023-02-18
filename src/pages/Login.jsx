@@ -110,6 +110,7 @@ export default function Login() {
                   <button
                     className="btn btn-primary text-uppercase"
                     type="submit"
+                    style={{ marginTop: "20px" }}
                   >
                     Login
                   </button>

@@ -11,6 +11,7 @@ import Analyze from "./pages/Analyze";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Creator from "./pages/CreatorStudio";
+import Profile from "./pages/Profile";
 import alanBtn from "@alan-ai/alan-sdk-web";
 import ScrollToTop from "./components/ScrollToTop";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -38,6 +39,7 @@ function App() {
           <Route path="/global" element={<Global />} />
           <Route path="/analyze" element={<Analyze />} />
           <Route path="/creator" element={<Creator />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
         <Footer />
       </Router>

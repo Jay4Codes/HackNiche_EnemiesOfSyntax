@@ -4725,6 +4725,7 @@ fieldset:disabled .btn {
 
 .navbar-light .navbar-toggler {
     color: rgba(0, 0, 0, 0.55);
+    background-color: #fff;
     border-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -11616,7 +11617,7 @@ blockquote::before {
 }
 
 .form-control {
-    color: #233242 !important;
+    color: #fff !important;
 }
 
 .form-control::-moz-placeholder {

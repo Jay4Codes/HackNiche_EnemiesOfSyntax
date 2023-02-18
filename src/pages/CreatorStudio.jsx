@@ -93,7 +93,6 @@ function CreatorStudio() {
                     name="title"
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
-                    // onChange={}
                   />
                 </div>
                 <div className="form-group mb-4 pb-2">
