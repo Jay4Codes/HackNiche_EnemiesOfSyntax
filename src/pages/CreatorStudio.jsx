@@ -52,7 +52,14 @@ function CreatorStudio() {
       "https://hacknich.pythonanywhere.com/login/news-create",
       requestOptions
     )
-      .then((response) => response.json())
+      .then((response) => {
+        if(response.status ==201){
+          Swal.fire("This text has content with hate bitch", "error");
+        }else if(response.status==200){
+          Swal.fire("Post Created Successfully", "success");
+        }
+        return response.json();
+      })
       .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
     event.preventDefault();
