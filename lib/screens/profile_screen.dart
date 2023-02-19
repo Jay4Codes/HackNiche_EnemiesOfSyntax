@@ -57,22 +57,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             'Yash Joshi',
                             style: GoogleFonts.ptSans(
                                 textStyle: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.w400,
-                                    letterSpacing: 1)),
+                                    color: Colors.white, fontSize: 24, fontWeight: FontWeight.w400, letterSpacing: 1)),
                           ),
                           SizedBox(
                             height: 10,
                           ),
                           Text(
-                            '6 posts',
+                            '4 posts',
                             style: GoogleFonts.ptSans(
                                 textStyle: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w400,
-                                    letterSpacing: 1)),
+                                    color: Colors.white, fontSize: 18, fontWeight: FontWeight.w400, letterSpacing: 1)),
                           )
                         ],
                       ),
@@ -80,123 +74,124 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ],
                 ),
               ),
-              FutureBuilder(
-                  future: _getPosts,
-                  builder: (context, snapshot) {
-                    if (snapshot.hasData) {
-                      var data = (snapshot.data as List).toList();
-                      return Container(
-                        height: 650,
-                        width: MediaQuery.of(context).size.width,
-                        child: ListView.builder(
-                          itemCount: data.length,
-                          itemBuilder: (context, index) {
-                            return Container(
-                              decoration: BoxDecoration(
-                                  // gradient: LinearGradient(
-                                  //   begin: Alignment.topLeft,
-                                  //   end: Alignment(0.8, 1),
-                                  //   colors: <Color>[
+              Padding(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: FutureBuilder(
+                    future: _getPosts,
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        var data = (snapshot.data as List).toList();
+                        return Container(
+                          height: 650,
+                          width: MediaQuery.of(context).size.width,
+                          child: ListView.builder(
+                            itemCount: data.length,
+                            itemBuilder: (context, index) {
+                              return Container(
+                                decoration: BoxDecoration(
+                                    // gradient: LinearGradient(
+                                    //   begin: Alignment.topLeft,
+                                    //   end: Alignment(0.8, 1),
+                                    //   colors: <Color>[
 
-                                  //   ], // Gradient from https://learnui.design/tools/gradient-generator.html
-                                  //   // tileMode: TileMode.mirror,
-                                  // ),
-                                  color: Colors.black,
-                                  borderRadius: BorderRadius.circular(10)),
-                              child: Column(children: [
-                                data[index]["Image"] != null
-                                    ? ClipRRect(
-                                        borderRadius: BorderRadius.circular(10),
-                                        child: Image.network(
-                                          'https://hacknich.pythonanywhere.com${data[index]["Image"]}',
-                                          height: 250,
+                                    //   ], // Gradient from https://learnui.design/tools/gradient-generator.html
+                                    //   // tileMode: TileMode.mirror,
+                                    // ),
+                                    color: Colors.black,
+                                    borderRadius: BorderRadius.circular(10)),
+                                child: Column(children: [
+                                  data[index]["Image"] != null
+                                      ? ClipRRect(
+                                          borderRadius: BorderRadius.circular(10),
+                                          child: Image.network(
+                                            'https://hacknich.pythonanywhere.com${data[index]["Image"]}',
+                                            height: 200,
+                                            width: double.infinity,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        )
+                                      : Image.network(
+                                          'https://resize.indiatvnews.com/en/resize/newbucket/730_-/2023/02/breaking-news-template-5-1676596130.jpg',
                                           fit: BoxFit.cover,
+                                          height: 350,
                                         ),
-                                      )
-                                    : Image.network(
-                                        'https://resize.indiatvnews.com/en/resize/newbucket/730_-/2023/02/breaking-news-template-5-1676596130.jpg',
-                                        fit: BoxFit.cover,
-                                        height: 350,
-                                      ),
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      top: 22.0, left: 15),
-                                  child: Text(
-                                    data[index]['title'],
-                                    style: GoogleFonts.ptSans(
-                                        textStyle: const TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 20,
-                                            fontWeight: FontWeight.bold,
-                                            letterSpacing: 1)),
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 22.0, left: 15),
+                                    child: Text(
+                                      data[index]['title'],
+                                      style: GoogleFonts.ptSans(
+                                          textStyle: const TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold,
+                                              letterSpacing: 1)),
+                                    ),
                                   ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      top: 22.0, left: 15),
-                                  child: Text(
-                                    data[index]['description'],
-                                    style: GoogleFonts.ptSans(
-                                        textStyle: const TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 15,
-                                            // fontWeight: FontWeight.w700,
-                                            letterSpacing: 1)),
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 22.0, left: 15),
+                                    child: Text(
+                                      data[index]['description'],
+                                      style: GoogleFonts.ptSans(
+                                          textStyle: const TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 15,
+                                              // fontWeight: FontWeight.w700,
+                                              letterSpacing: 1)),
+                                    ),
                                   ),
-                                ),
-                                Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 22.0, left: 15),
-                                    child: Row(children: [
-                                      Icon(
-                                        Icons.access_time,
-                                        color: Colors.white,
-                                        size: 15,
-                                      ),
-                                      SizedBox(
-                                        width: 5,
-                                      ),
-                                      Text(
-                                        '${5 + index} hours ago',
-                                        style: GoogleFonts.ptSans(
-                                            textStyle: const TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 15,
-                                                // fontWeight: FontWeight.w700,
-                                                letterSpacing: 1)),
-                                      ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Text(
-                                        '•',
-                                        style: TextStyle(
+                                  Padding(
+                                      padding: const EdgeInsets.only(top: 22.0, left: 15),
+                                      child: Row(children: [
+                                        Icon(
+                                          Icons.access_time,
                                           color: Colors.white,
-                                          fontSize: 13,
+                                          size: 15,
                                         ),
-                                      ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Text(
-                                        'Mumbai',
-                                        style: GoogleFonts.ptSans(
-                                            textStyle: const TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 15,
-                                                // fontWeight: FontWeight.w700,
-                                                letterSpacing: 1)),
-                                      ),
-                                    ]))
-                              ]),
-                            );
-                          },
-                        ),
-                      );
-                    } else {
-                      return CircularProgressIndicator();
-                    }
-                  }),
+                                        SizedBox(
+                                          width: 5,
+                                        ),
+                                        Text(
+                                          '${5 + index} hours ago',
+                                          style: GoogleFonts.ptSans(
+                                              textStyle: const TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 15,
+                                                  // fontWeight: FontWeight.w700,
+                                                  letterSpacing: 1)),
+                                        ),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Text(
+                                          '•',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 13,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Text(
+                                          data[index]['source'],
+                                          style: GoogleFonts.ptSans(
+                                              textStyle: const TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 15,
+                                                  // fontWeight: FontWeight.w700,
+                                                  letterSpacing: 1)),
+                                        ),
+                                      ]))
+                                ]),
+                              );
+                            },
+                          ),
+                        );
+                      } else {
+                        return CircularProgressIndicator();
+                      }
+                    }),
+              ),
             ],
           ),
         ),
