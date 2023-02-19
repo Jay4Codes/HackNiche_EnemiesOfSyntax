@@ -42,23 +42,23 @@ class _CategoriesState extends State<Categories> {
       ),
       body: Container(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           // mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Image.asset(
-              "assets/illustrations/logo.png",
-              height: 250,
+            Center(
+              child: Image.asset(
+                "assets/illustrations/logo.png",
+                height: 250,
+              ),
             ),
             Container(
-                margin: EdgeInsets.only(right: 250, bottom: 10),
+                margin: EdgeInsets.only(left: 25),
                 child: Text('Categories',
                     style: GoogleFonts.ptSans(
                         textStyle: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w700,
-                            letterSpacing: 1)))),
+                            color: Colors.white, fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: 1)))),
             Container(
-              height: 520,
+              height: 500,
               child: GridView.count(
                 primary: false,
                 padding: const EdgeInsets.all(20),
@@ -78,8 +78,7 @@ class _CategoriesState extends State<Categories> {
                     child: Container(
                       decoration: BoxDecoration(
                           color: Color(0xFF565656).withOpacity(0.5),
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(25.0))),
+                          borderRadius: BorderRadius.all(Radius.circular(25.0))),
                       padding: const EdgeInsets.all(8),
                       child: Column(
                         children: [
@@ -89,9 +88,7 @@ class _CategoriesState extends State<Categories> {
                           ),
                           Text(
                             'Business',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
+                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -109,8 +106,7 @@ class _CategoriesState extends State<Categories> {
                     child: Container(
                       decoration: BoxDecoration(
                           color: Color(0xFF565656).withOpacity(0.5),
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(25.0))),
+                          borderRadius: BorderRadius.all(Radius.circular(25.0))),
                       padding: const EdgeInsets.all(8),
                       child: Column(
                         children: [
@@ -120,9 +116,7 @@ class _CategoriesState extends State<Categories> {
                           ),
                           Text(
                             'Entertainment',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
+                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -140,8 +134,7 @@ class _CategoriesState extends State<Categories> {
                     child: Container(
                       decoration: BoxDecoration(
                           color: Color(0xFF565656).withOpacity(0.5),
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(25.0))),
+                          borderRadius: BorderRadius.all(Radius.circular(25.0))),
                       padding: const EdgeInsets.all(8),
                       child: Column(
                         children: [
@@ -151,9 +144,7 @@ class _CategoriesState extends State<Categories> {
                           ),
                           Text(
                             'Environment',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
+                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -171,8 +162,7 @@ class _CategoriesState extends State<Categories> {
                     child: Container(
                       decoration: BoxDecoration(
                           color: Color(0xFF565656).withOpacity(0.5),
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(25.0))),
+                          borderRadius: BorderRadius.all(Radius.circular(25.0))),
                       padding: const EdgeInsets.all(8),
                       child: Column(
                         children: [
@@ -182,9 +172,7 @@ class _CategoriesState extends State<Categories> {
                           ),
                           Text(
                             'Food',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
+                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -202,8 +190,7 @@ class _CategoriesState extends State<Categories> {
                     child: Container(
                       decoration: BoxDecoration(
                           color: Color(0xFF565656).withOpacity(0.5),
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(25.0))),
+                          borderRadius: BorderRadius.all(Radius.circular(25.0))),
                       padding: const EdgeInsets.all(8),
                       child: Column(
                         children: [
@@ -213,9 +200,7 @@ class _CategoriesState extends State<Categories> {
                           ),
                           Text(
                             'Health',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
+                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -233,8 +218,7 @@ class _CategoriesState extends State<Categories> {
                     child: Container(
                       decoration: BoxDecoration(
                           color: Color(0xFF565656).withOpacity(0.5),
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(25.0))),
+                          borderRadius: BorderRadius.all(Radius.circular(25.0))),
                       padding: const EdgeInsets.all(8),
                       child: Column(
                         children: [
@@ -244,9 +228,7 @@ class _CategoriesState extends State<Categories> {
                           ),
                           Text(
                             'Politics',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
+                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -264,8 +246,7 @@ class _CategoriesState extends State<Categories> {
                     child: Container(
                       decoration: BoxDecoration(
                           color: Color(0xFF565656).withOpacity(0.5),
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(25.0))),
+                          borderRadius: BorderRadius.all(Radius.circular(25.0))),
                       padding: const EdgeInsets.all(8),
                       child: Column(
                         children: [
@@ -275,9 +256,7 @@ class _CategoriesState extends State<Categories> {
                           ),
                           Text(
                             'Science',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
+                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -295,8 +274,7 @@ class _CategoriesState extends State<Categories> {
                     child: Container(
                       decoration: BoxDecoration(
                           color: Color(0xFF565656).withOpacity(0.5),
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(25.0))),
+                          borderRadius: BorderRadius.all(Radius.circular(25.0))),
                       padding: const EdgeInsets.all(8),
                       child: Column(
                         children: [
@@ -309,9 +287,7 @@ class _CategoriesState extends State<Categories> {
                           ),
                           Text(
                             'Sports',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
+                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -329,8 +305,7 @@ class _CategoriesState extends State<Categories> {
                     child: Container(
                       decoration: BoxDecoration(
                           color: Color(0xFF565656).withOpacity(0.5),
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(25.0))),
+                          borderRadius: BorderRadius.all(Radius.circular(25.0))),
                       padding: const EdgeInsets.all(8),
                       child: Column(
                         children: [
@@ -343,9 +318,7 @@ class _CategoriesState extends State<Categories> {
                           ),
                           Text(
                             'Technology',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
+                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -363,8 +336,7 @@ class _CategoriesState extends State<Categories> {
                     child: Container(
                       decoration: BoxDecoration(
                           color: Color(0xFF565656).withOpacity(0.5),
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(25.0))),
+                          borderRadius: BorderRadius.all(Radius.circular(25.0))),
                       padding: const EdgeInsets.all(8),
                       child: Column(
                         children: [
@@ -377,9 +349,7 @@ class _CategoriesState extends State<Categories> {
                           ),
                           Text(
                             'Top',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
+                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -397,8 +367,7 @@ class _CategoriesState extends State<Categories> {
                     child: Container(
                       decoration: BoxDecoration(
                           color: Color(0xFF565656).withOpacity(0.5),
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(25.0))),
+                          borderRadius: BorderRadius.all(Radius.circular(25.0))),
                       padding: const EdgeInsets.all(8),
                       child: Column(
                         children: [
@@ -411,9 +380,7 @@ class _CategoriesState extends State<Categories> {
                           ),
                           Text(
                             'World',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
+                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
