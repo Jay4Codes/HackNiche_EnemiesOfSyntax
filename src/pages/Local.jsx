@@ -11,7 +11,7 @@ const Local = () => {
     };
 
     fetch(
-      "https://hacknich.pythonanywhere.com/login/newsapi/?category=business&local=1",
+      "",
       requestOptions
     )
       .then((response) => response.json())
