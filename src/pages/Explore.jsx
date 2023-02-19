@@ -58,7 +58,7 @@ const Explore = () => {
   return (
     <div style={{ display: "flex" }}>
       <div className="col-lg-8">
-        <LoadScript googleMapsApiKey="AIzaSyAVgTxsIyo7r3Xyx4LIqBVrpjJJa0Jnbhs">
+        <LoadScript googleMapsApiKey="">
           <GoogleMap
             mapContainerStyle={mapStyles}
             zoom={11}

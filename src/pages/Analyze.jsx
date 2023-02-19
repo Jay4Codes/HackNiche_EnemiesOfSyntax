@@ -5,7 +5,7 @@ import HighchartsReact from "highcharts-react-official";
 const Analyze = () => {
   const options = {
     title: {
-      text: "My chart",
+      text: "News posted By you",
     },
     series: [
       {
@@ -19,7 +19,7 @@ const Analyze = () => {
       type: "pie",
     },
     title: {
-      text: "Browser market shares in January, 2018",
+      text: "Most categoty news read in January, 2023",
     },
     subtitle: {
       text: 'Source: <a href="http://statcounter.com" target="_blank">statcounter.com</a>',
@@ -36,29 +36,29 @@ const Analyze = () => {
     },
     series: [
       {
-        name: "Brands",
+        name: "Categories",
         colorByPoint: true,
         data: [
           {
-            name: "Chrome",
+            name: "Business",
             y: 61.41,
             sliced: true,
             selected: true,
           },
           {
-            name: "Internet Explorer",
+            name: "Sports",
             y: 11.84,
           },
           {
-            name: "Firefox",
+            name: "Entertainment",
             y: 10.85,
           },
           {
-            name: "Edge",
+            name: "Education",
             y: 4.67,
           },
           {
-            name: "Safari",
+            name: "Politics",
             y: 4.18,
           },
           {
@@ -84,16 +84,16 @@ const Analyze = () => {
     },
     xAxis: {
       categories: [
-        "Toyota",
-        "BMW",
-        "Volvo",
-        "Audi",
-        "Peugeot",
-        "Mercedes-Benz",
-        "Volkswagen",
-        "Polestar",
-        "Kia",
-        "Nissan",
+        "ABP News",
+        "Aaj Tak",
+        "BBC News",
+        "CNN News",
+        "NDTV News",
+        "Times Now",
+        "Zee News",
+        "India Today",
+        "Republic TV",
+        "News 18 India",
       ],
     },
     yAxis: {
@@ -106,7 +106,7 @@ const Analyze = () => {
       pointFormat: "Cars sold: {point.y}",
     },
     title: {
-      text: "Sold passenger cars in Norway by brand, January 2021",
+      text: "Stats of News posted by Journalists",
       align: "left",
     },
     subtitle: {
