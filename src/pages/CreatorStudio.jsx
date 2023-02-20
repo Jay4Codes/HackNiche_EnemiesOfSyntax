@@ -49,7 +49,7 @@ function CreatorStudio() {
     };
 
     fetch(
-      "",
+      "https://hacknich.pythonanywhere.com/login/news-create",
       requestOptions
     )
       .then((response) => {

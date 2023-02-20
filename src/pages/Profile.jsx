@@ -11,7 +11,7 @@ const Profile = () => {
     };
 
     fetch(
-      "",
+      "https://hacknich.pythonanywhere.com/login/profileposts/1/",
       requestOptions
     )
       .then((response) => response.json())
