@@ -6,7 +6,7 @@ import {
 } from "@react-google-maps/api";
 import React, { useEffect, useState } from "react";
 import notfound from "../assets/images/404.png";
-import Fade from "react-reveal/Fade";
+// import Fade from "react-reveal/Fade";
 import "./Explore.css";
 
 const Explore = () => {
@@ -81,11 +81,11 @@ const Explore = () => {
       <div className="col-lg-4 sidebar">
         {showInfoWindow ? (
           <>
-            <Fade right>
+            {/* <Fade right> */}
               <img src={image} alt="" />
-            </Fade>
+            {/* </Fade> */}
             <ul>
-              <Fade bottom cascade>
+              {/* <Fade bottom cascade> */}
                 <li style={{ margin: "10px" }}>{news_1}</li>
                 <li style={{ margin: "10px" }}>{news_2}</li>
                 <li style={{ margin: "10px" }}>
@@ -101,7 +101,7 @@ const Explore = () => {
                 ) : (
                   <></>
                 )}
-              </Fade>
+              {/* </Fade> */}
             </ul>
           </>
         ) : (

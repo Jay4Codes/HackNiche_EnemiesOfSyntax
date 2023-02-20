@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ArticlePost from "../components/ArticlePost";
-import Fade from "react-reveal/Fade";
+// import Fade from "react-reveal/Fade";
 
 const Profile = () => {
   const [res, setRes] = useState([]);
@@ -29,7 +29,7 @@ const Profile = () => {
   return (
     <div>
       <section className="section testimonials overflow-hidden bg-black">
-        <Fade bottom cascade>
+        {/* <Fade bottom cascade> */}
           <div className="container">
             <div className="row position-relative">
               {res.map((item) => (
@@ -42,7 +42,7 @@ const Profile = () => {
               ))}
             </div>
           </div>
-        </Fade>
+        {/* </Fade> */}
       </section>
     </div>
   );

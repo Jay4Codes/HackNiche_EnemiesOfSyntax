@@ -1,5 +1,5 @@
 import React from "react";
-import Fade from "react-reveal/Fade";
+// import Fade from "react-reveal/Fade";
 import { Link } from "react-router-dom";
 import open from "../assets/images/open.png";
 import local from "../assets/images/local.png";
@@ -12,7 +12,7 @@ import multilingual from "../assets/images/multilingual.png";
 const Home = () => {
   return (
     <>
-      <Fade bottom cascade>
+      {/* <Fade bottom cascade> */}
         <section className="banner bg-black position-relative overflow-hidden">
           <div className="container">
             <div className="row align-items-center justify-content-center">
@@ -130,12 +130,12 @@ const Home = () => {
             </svg>
           </div>
         </section>
-      </Fade>
+      {/* </Fade> */}
 
-      <Fade bottom cascade>
+      {/* <Fade bottom cascade> */}
         <section className="section bg-black">
           <div className="container">
-            <Fade bottom cascade>
+            {/* <Fade bottom cascade> */}
               <div className="row align-items-center justify-content-between">
                 <div className="col-lg-5">
                   <div className="section-title">
@@ -215,14 +215,14 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-            </Fade>
+            {/* </Fade> */}
           </div>
         </section>
-      </Fade>
+      {/* </Fade> */}
 
       <section className="homepage_tab position-relative bg-black">
         <div className="section container">
-          <Fade bottom cascade>
+          {/* <Fade bottom cascade> */}
             <div className="row justify-content-center bg-black">
               <div className="col-lg-8 mb-4 bg-black">
                 <div className="section-title text-center bg-black">
@@ -375,7 +375,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-          </Fade>
+          {/* </Fade> */}
         </div>
       </section>
     </>
