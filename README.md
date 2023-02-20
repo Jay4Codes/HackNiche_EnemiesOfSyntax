@@ -7,7 +7,7 @@ App Code : https://github.com/Jay4Codes/HackNiche_EnemiesOfSyntax/tree/app
 
 # Introduction
 
-Hola Everyone, This is team The Enemies of Syntax which consists of 4 people of each and every stack. We have Jay Jain and Yash Shah here for React, Soham Rane for Flutter app and Yash Joshi for AI/ML and Django Backend. Newsify is software that allows users to watch or read news in a variety of ways, with location-based filtering that recommends all relevant content. A Google map is integrated with the subscription model, which will provide a proper overview of the news from its start to the end. Users can also post news in newsify, which is read by users and shared by users in the specific area. A chat bot is integrated which tells all the latest news and also helps easy colabration in the website
+ Newsify is software that allows users to watch or read news in a variety of ways, with location-based filtering that recommends all relevant content. A Google map is integrated with the subscription model, which will provide a proper overview of the news from its start to the end. Users can also post news in newsify, which is read by users and shared by users in the specific area. A chat bot is integrated which tells all the latest news and also helps easy colabration in the website
 
 # Contributors :
 <br />Jay Jain: https://github.com/Jay4Codes
